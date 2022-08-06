@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "extensivediamonds",
+  "version": "${version}",
+
+  "name": "Extensive Diamonds",
+  "description": "Adds more diamond types to Minecraft!",
+  "authors": [
+    "SirJain"
+  ],
+  "contact": {
+    "homepage": "https://twitter.com"
+  },
+
+  "license": "MIT",
+  "icon": "assets/extensivediamonds/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "sirjain.extensivediamonds.ExtensiveDiamonds"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
