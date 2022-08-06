@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "extensivediamonds:block/red_diamond_ore"
-  }
-}
