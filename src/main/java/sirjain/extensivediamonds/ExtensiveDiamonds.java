@@ -1,20 +1,20 @@
 package sirjain.extensivediamonds;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.block.*;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 
 public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
+	public static final ItemGroup EXTENSIVEDIAMONDS_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, MOD_ID), () -> new ItemStack(Items.BEDROCK));
 
-	public static final Item RED_DIAMOND = new Item(new Item.Settings().group(ItemGroup.MISC));
-	public static final Item GREEN_DIAMOND = new Item(new Item.Settings().group(ItemGroup.MISC));
-	public static final Item DARK_DIAMOND = new Item(new Item.Settings().group(ItemGroup.MISC));
+	public static final Item RED_DIAMOND = new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP));
+	public static final Item GREEN_DIAMOND = new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP));
+	public static final Item DARK_DIAMOND = new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP));
 
 	// ORE
 
@@ -27,7 +27,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Item RED_DIAMOND_ORE = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond_ore"),
-			new BlockItem(RED_DIAMOND_ORE_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
+			new BlockItem(RED_DIAMOND_ORE_BLOCK, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Block GREEN_DIAMOND_ORE_BLOCK = Registry.register(
@@ -39,7 +39,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Item GREEN_DIAMOND_ORE = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond_ore"),
-			new BlockItem(GREEN_DIAMOND_ORE_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
+			new BlockItem(GREEN_DIAMOND_ORE_BLOCK, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Block DARK_DIAMOND_ORE_BLOCK = Registry.register(
@@ -51,7 +51,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Item DARK_DIAMOND_ORE = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_ore"),
-			new BlockItem(DARK_DIAMOND_ORE_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
+			new BlockItem(DARK_DIAMOND_ORE_BLOCK, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	// ORE BLOCKS
@@ -65,7 +65,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Item BLOCK_OF_GREEN_DIAMOND_BLOCK = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_green_diamond"),
-			new BlockItem(BLOCK_OF_GREEN_DIAMOND, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
+			new BlockItem(BLOCK_OF_GREEN_DIAMOND, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Block BLOCK_OF_RED_DIAMOND = Registry.register(
@@ -77,7 +77,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Item BLOCK_OF_RED_DIAMOND_BLOCK = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_red_diamond"),
-			new BlockItem(BLOCK_OF_RED_DIAMOND, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
+			new BlockItem(BLOCK_OF_RED_DIAMOND, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Block BLOCK_OF_DARK_DIAMOND = Registry.register(
@@ -89,7 +89,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Item BLOCK_OF_DARK_DIAMOND_BLOCK = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_dark_diamond"),
-			new BlockItem(BLOCK_OF_DARK_DIAMOND, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
+			new BlockItem(BLOCK_OF_DARK_DIAMOND, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	@Override
