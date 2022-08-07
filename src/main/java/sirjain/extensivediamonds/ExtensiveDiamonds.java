@@ -16,6 +16,8 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Item GREEN_DIAMOND = new Item(new Item.Settings().group(ItemGroup.MISC));
 	public static final Item DARK_DIAMOND = new Item(new Item.Settings().group(ItemGroup.MISC));
 
+	// ORE
+
 	public static final Block RED_DIAMOND_ORE_BLOCK = Registry.register(
 			Registry.BLOCK,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond_ore"),
@@ -52,10 +54,24 @@ public class ExtensiveDiamonds implements ModInitializer {
 			new BlockItem(DARK_DIAMOND_ORE_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
 	);
 
+	// ORE BLOCKS
+
+	public static final Block BLOCK_OF_GREEN_DIAMOND = Registry.register(
+			Registry.BLOCK,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_green_diamond"),
+			new OreBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+	);
+
+	public static final Item BLOCK_OF_GREEN_DIAMOND_BLOCK = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_green_diamond"),
+			new BlockItem(BLOCK_OF_GREEN_DIAMOND, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
+	);
+
 	@Override
 	public void onInitialize() {
 
-		// ==== DIAMOND ORES ====
+		// ==== gems ====
 
 		Registry.register(
 				Registry.ITEM,
