@@ -68,6 +68,18 @@ public class ExtensiveDiamonds implements ModInitializer {
 			new BlockItem(BLOCK_OF_GREEN_DIAMOND, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
 	);
 
+	public static final Block BLOCK_OF_RED_DIAMOND = Registry.register(
+			Registry.BLOCK,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_red_diamond"),
+			new OreBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+	);
+
+	public static final Item BLOCK_OF_RED_DIAMOND_BLOCK = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_red_diamond"),
+			new BlockItem(BLOCK_OF_RED_DIAMOND, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS))
+	);
+
 	@Override
 	public void onInitialize() {
 
