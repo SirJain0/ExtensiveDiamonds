@@ -7,5 +7,7 @@
   "block.extensivediamonds.green_diamond_ore": "Green Diamond Ore",
   "block.extensivediamonds.red_diamond_ore": "Red Diamond Ore",
 
-  "block.extensivediamonds.block_of_green_diamond": "Block of Green Diamond"
+  "block.extensivediamonds.block_of_green_diamond": "Block of Green Diamond",
+  "block.extensivediamonds.block_of_red_diamond": "Block of Red Diamond",
+  "block.extensivediamonds.block_of_dark_diamond": "Block of Dark Diamond"
 }
