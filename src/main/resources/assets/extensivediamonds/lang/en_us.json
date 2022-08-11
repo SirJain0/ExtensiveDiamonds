@@ -5,6 +5,10 @@
   "item.extensivediamonds.green_diamond": "Green Diamond",
   "item.extensivediamonds.dark_diamond": "Dark Diamond",
 
+  "item.extensivediamonds.red_diamond_sword": "Red Diamond Sword",
+  "item.extensivediamonds.green_diamond_sword": "Green Diamond Sword",
+  "item.extensivediamonds.dark_diamond_sword": "Dark Diamond Sword",
+
   "block.extensivediamonds.dark_diamond_ore": "Dark Diamond Ore",
   "block.extensivediamonds.green_diamond_ore": "Green Diamond Ore",
   "block.extensivediamonds.red_diamond_ore": "Red Diamond Ore",

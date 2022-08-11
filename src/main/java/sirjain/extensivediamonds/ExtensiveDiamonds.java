@@ -7,6 +7,12 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
+import sirjain.extensivediamonds.items.DarkDiamondSwordItem;
+import sirjain.extensivediamonds.items.GreenDiamondSwordItem;
+import sirjain.extensivediamonds.items.RedDiamondSwordItem;
+import sirjain.extensivediamonds.items.material.tool.DarkdiamondToolMaterial;
+import sirjain.extensivediamonds.items.material.tool.GreendiamondToolMaterial;
+import sirjain.extensivediamonds.items.material.tool.ReddiamondToolMaterial;
 
 public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
@@ -91,6 +97,26 @@ public class ExtensiveDiamonds implements ModInitializer {
 			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_dark_diamond"),
 			new BlockItem(BLOCK_OF_DARK_DIAMOND, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
+
+	public static final Item RED_DIAMOND_SWORD = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond_sword"),
+			new RedDiamondSwordItem(ReddiamondToolMaterial.INSTANCE, 5, -2.4f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Item GREEN_DIAMOND_SWORD = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond_sword"),
+			new GreenDiamondSwordItem(GreendiamondToolMaterial.INSTANCE, 6, -2.4f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Item DARK_DIAMOND_SWORD = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_sword"),
+			new DarkDiamondSwordItem(DarkdiamondToolMaterial.INSTANCE, 8, -2.4f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	// SWORDS
 
 	@Override
 	public void onInitialize() {
