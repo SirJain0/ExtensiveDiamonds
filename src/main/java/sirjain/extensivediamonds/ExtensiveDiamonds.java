@@ -11,6 +11,7 @@ import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.items.DarkDiamondSwordItem;
+import sirjain.extensivediamonds.items.FusedDiamondItem;
 import sirjain.extensivediamonds.items.GreenDiamondSwordItem;
 import sirjain.extensivediamonds.items.RedDiamondSwordItem;
 import sirjain.extensivediamonds.items.material.tool.DarkdiamondToolMaterial;
@@ -119,6 +120,12 @@ public class ExtensiveDiamonds implements ModInitializer {
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_sword"),
 			new DarkDiamondSwordItem(DarkdiamondToolMaterial.INSTANCE, 8, -2.4f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Item FUSED_DIAMOND = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond"),
+			new FusedDiamondItem(true)
 	);
 
 	// SWORDS

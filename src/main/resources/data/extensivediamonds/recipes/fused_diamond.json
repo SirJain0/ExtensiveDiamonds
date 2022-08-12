@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i i",
+    "BSK",
+    "DDD"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "extensivediamonds:red_diamond"
+    },
+    "S": {
+      "item": "extensivediamonds:dark_diamond"
+    },
+    "K": {
+      "item": "extensivediamonds:green_diamond"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "extensivediamonds:fused_diamond",
+    "count": 3
+  }
+}
