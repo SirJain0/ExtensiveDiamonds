@@ -18,5 +18,11 @@ public class RedDiamondSwordItem extends SwordItem {
     public RedDiamondSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Item.Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 6), attacker);
+        return super.postHit(stack, target, attacker);
+    }
 }
 

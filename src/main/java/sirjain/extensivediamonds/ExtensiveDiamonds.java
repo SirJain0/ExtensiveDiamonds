@@ -7,15 +7,20 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
+import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.items.DarkDiamondSwordItem;
 import sirjain.extensivediamonds.items.GreenDiamondSwordItem;
 import sirjain.extensivediamonds.items.RedDiamondSwordItem;
 import sirjain.extensivediamonds.items.material.tool.DarkdiamondToolMaterial;
 import sirjain.extensivediamonds.items.material.tool.GreendiamondToolMaterial;
 import sirjain.extensivediamonds.items.material.tool.ReddiamondToolMaterial;
+import sirjain.extensivediamonds.painting.ModPaintings;
 
 public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final ItemGroup EXTENSIVEDIAMONDS_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, MOD_ID), () -> new ItemStack(Items.BEDROCK));
 
 	public static final Item RED_DIAMOND = new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP));
@@ -137,5 +142,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 				Registry.ITEM,
 				new Identifier("extensivediamonds", "dark_diamond"), DARK_DIAMOND
 		);
+
+		ModPaintings.registerPaintings();
 	}
 }
