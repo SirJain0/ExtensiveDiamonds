@@ -2,6 +2,7 @@ package sirjain.extensivediamonds;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -18,6 +19,8 @@ import sirjain.extensivediamonds.items.material.tool.DarkdiamondToolMaterial;
 import sirjain.extensivediamonds.items.material.tool.GreendiamondToolMaterial;
 import sirjain.extensivediamonds.items.material.tool.ReddiamondToolMaterial;
 import sirjain.extensivediamonds.painting.ModPaintings;
+import sirjain.extensivediamonds.world.feature.ModConfiguredFeatures;
+import sirjain.extensivediamonds.world.gen.ModOreGeneration;
 
 public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
@@ -28,42 +31,82 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Item GREEN_DIAMOND = new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP));
 	public static final Item DARK_DIAMOND = new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP));
 
-	// ORE
+	// ORE BLOCKS
 
-	public static final Block RED_DIAMOND_ORE_BLOCK = Registry.register(
+	public static final Block RED_DIAMOND_ORE = Registry.register(
 			Registry.BLOCK,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond_ore"),
-			new OreBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+			new OreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
 	);
 
-	public static final Item RED_DIAMOND_ORE = Registry.register(
+	public static final Item BLOCK_RED_DIAMOND_ORE = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond_ore"),
-			new BlockItem(RED_DIAMOND_ORE_BLOCK, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+			new BlockItem(RED_DIAMOND_ORE, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
-	public static final Block GREEN_DIAMOND_ORE_BLOCK = Registry.register(
+	public static final Block GREEN_DIAMOND_ORE = Registry.register(
 			Registry.BLOCK,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond_ore"),
+			new OreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+	);
+
+	public static final Item BLOCK_GREEN_DIAMOND_ORE = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond_ore"),
+			new BlockItem(GREEN_DIAMOND_ORE, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Block DARK_DIAMOND_ORE = Registry.register(
+			Registry.BLOCK,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_ore"),
+			new OreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+	);
+
+	public static final Item BLOCK_DARK_DIAMOND_ORE = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_ore"),
+			new BlockItem(DARK_DIAMOND_ORE, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	// DEEPSLATE ORE
+
+	public static final Block DEEPSLATE_RED_DIAMOND_ORE = Registry.register(
+			Registry.BLOCK,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "deepslate_red_diamond_ore"),
 			new OreBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
 	);
 
-	public static final Item GREEN_DIAMOND_ORE = Registry.register(
+	public static final Item BLOCK_DEEPSLATE_RED_DIAMOND_ORE = Registry.register(
 			Registry.ITEM,
-			new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond_ore"),
-			new BlockItem(GREEN_DIAMOND_ORE_BLOCK, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+			new Identifier(ExtensiveDiamonds.MOD_ID, "deepslate_red_diamond_ore"),
+			new BlockItem(DEEPSLATE_RED_DIAMOND_ORE, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
-	public static final Block DARK_DIAMOND_ORE_BLOCK = Registry.register(
+	// deepslate ore blocks
+
+	public static final Block DEEPSLATE_GREEN_DIAMOND_ORE = Registry.register(
 			Registry.BLOCK,
-			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_ore"),
+			new Identifier(ExtensiveDiamonds.MOD_ID, "deepslate_green_diamond_ore"),
 			new OreBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
 	);
 
-	public static final Item DARK_DIAMOND_ORE = Registry.register(
+	public static final Item BLOCK_DEEPSLATE_GREEN_DIAMOND_ORE = Registry.register(
 			Registry.ITEM,
-			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_ore"),
-			new BlockItem(DARK_DIAMOND_ORE_BLOCK, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+			new Identifier(ExtensiveDiamonds.MOD_ID, "deepslate_green_diamond_ore"),
+			new BlockItem(DEEPSLATE_GREEN_DIAMOND_ORE, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Block DEEPSLATE_DARK_DIAMOND_ORE = Registry.register(
+			Registry.BLOCK,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "deepslate_dark_diamond_ore"),
+			new OreBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+	);
+
+	public static final Item BLOCK_DEEPSLATE_DARK_DIAMOND_ORE = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "deepslate_dark_diamond_ore"),
+			new BlockItem(DEEPSLATE_DARK_DIAMOND_ORE, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	// ORE BLOCKS
@@ -133,6 +176,8 @@ public class ExtensiveDiamonds implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		ModConfiguredFeatures.registerConfiguredFeatures();
+
 		// ==== gems ====
 
 		Registry.register(
@@ -150,6 +195,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 				new Identifier("extensivediamonds", "dark_diamond"), DARK_DIAMOND
 		);
 
+		ModOreGeneration.generateOres();
 		ModPaintings.registerPaintings();
 	}
 }
