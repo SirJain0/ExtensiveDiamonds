@@ -9,10 +9,17 @@ import net.minecraft.world.gen.placementmodifier.*;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final RegistryEntry<PlacedFeature> RED_DIAMOND_ORE_PLACED = PlacedFeatures.register("tanzanite_ore_placed",
+    public static final RegistryEntry<PlacedFeature> RED_DIAMOND_ORE_PLACED = PlacedFeatures.register("red_diamond_ore_placed",
             ModConfiguredFeatures.RED_DIAMOND_ORE, modifiersWithCount(5,
                     HeightRangePlacementModifier.trapezoid(YOffset.fixed(-50), YOffset.fixed(-57))));
 
+    public static final RegistryEntry<PlacedFeature> GREEN_DIAMOND_ORE_PLACED = PlacedFeatures.register("green_diamond_ore_placed",
+            ModConfiguredFeatures.GREEN_DIAMOND_ORE, modifiersWithCount(4,
+                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(-51), YOffset.fixed(-57))));
+
+    public static final RegistryEntry<PlacedFeature> DARK_DIAMOND_ORE_PLACED = PlacedFeatures.register("dark_diamond_ore_placed",
+            ModConfiguredFeatures.DARK_DIAMOND_ORE, modifiersWithCount(3,
+                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(-54), YOffset.fixed(-58))));
 
     private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
         return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
