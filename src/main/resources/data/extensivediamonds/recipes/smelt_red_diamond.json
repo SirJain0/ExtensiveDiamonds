@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "extensivediamonds:red_diamond_ore"
+  },
+  "result": "extensivediamonds:red_diamond",
+  "experience": 0.3,
+  "cookingtime": 210
+}

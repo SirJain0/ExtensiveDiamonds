@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "extensivediamonds:deepslate_dark_diamond_ore"
+  },
+  "result": "extensivediamonds:dark_diamond",
+  "experience": 0.4,
+  "cookingtime": 220
+}
