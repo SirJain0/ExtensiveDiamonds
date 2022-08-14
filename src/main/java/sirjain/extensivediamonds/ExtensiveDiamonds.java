@@ -8,16 +8,9 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
-import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sirjain.extensivediamonds.items.DarkDiamondSwordItem;
-import sirjain.extensivediamonds.items.FusedDiamondItem;
-import sirjain.extensivediamonds.items.GreenDiamondSwordItem;
-import sirjain.extensivediamonds.items.RedDiamondSwordItem;
-import sirjain.extensivediamonds.items.material.tool.DarkdiamondToolMaterial;
-import sirjain.extensivediamonds.items.material.tool.GreendiamondToolMaterial;
-import sirjain.extensivediamonds.items.material.tool.ReddiamondToolMaterial;
+import sirjain.extensivediamonds.items.*;
 import sirjain.extensivediamonds.painting.ModPaintings;
 import sirjain.extensivediamonds.world.feature.ModConfiguredFeatures;
 import sirjain.extensivediamonds.world.gen.ModOreGeneration;
@@ -26,10 +19,6 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final ItemGroup EXTENSIVEDIAMONDS_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, MOD_ID), () -> new ItemStack(Items.BEDROCK));
-
-	public static final Item RED_DIAMOND = new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP));
-	public static final Item GREEN_DIAMOND = new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP));
-	public static final Item DARK_DIAMOND = new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP));
 
 	// ORE BLOCKS
 
@@ -147,54 +136,53 @@ public class ExtensiveDiamonds implements ModInitializer {
 			new BlockItem(BLOCK_OF_DARK_DIAMOND, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
+	public static final Item FUSED_DIAMOND = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond"),
+			new DiamondItem(true)
+	);
+
+	public static final Item RED_DIAMOND = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond"),
+			new DiamondItem(false)
+	);
+
+	public static final Item GREEN_DIAMOND = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond"),
+			new DiamondItem(false)
+	);
+
+	public static final Item DARK_DIAMOND = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond"),
+			new DiamondItem(false)
+	);
+
+	// SWORDS
+
 	public static final Item RED_DIAMOND_SWORD = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond_sword"),
-			new RedDiamondSwordItem(ReddiamondToolMaterial.INSTANCE, 5, -2.4f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+			new DarkDiamondSwordItem(ModToolMaterials.RED_DIAMOND, 5, 2f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Item GREEN_DIAMOND_SWORD = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond_sword"),
-			new GreenDiamondSwordItem(GreendiamondToolMaterial.INSTANCE, 6, -2.4f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+			new RedDiamondSwordItem(ModToolMaterials.GREEN_DIAMOND, 6, 2f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Item DARK_DIAMOND_SWORD = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_sword"),
-			new DarkDiamondSwordItem(DarkdiamondToolMaterial.INSTANCE, 8, -2.4f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+			new DarkDiamondSwordItem(ModToolMaterials.DARK_DIAMOND, 8, 2f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
-
-	public static final Item FUSED_DIAMOND = Registry.register(
-			Registry.ITEM,
-			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond"),
-			new FusedDiamondItem(true)
-	);
-
-	// SWORDS
 
 	@Override
 	public void onInitialize() {
-
 		ModConfiguredFeatures.registerConfiguredFeatures();
-
-		// ==== gems ====
-
-		Registry.register(
-				Registry.ITEM,
-				new Identifier("extensivediamonds", "red_diamond"), RED_DIAMOND
-		);
-
-		Registry.register(
-				Registry.ITEM,
-				new Identifier("extensivediamonds", "green_diamond"), GREEN_DIAMOND
-		);
-
-		Registry.register(
-				Registry.ITEM,
-				new Identifier("extensivediamonds", "dark_diamond"), DARK_DIAMOND
-		);
-
 		ModOreGeneration.generateOres();
 		ModPaintings.registerPaintings();
 	}
