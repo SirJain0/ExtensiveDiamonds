@@ -136,12 +136,6 @@ public class ExtensiveDiamonds implements ModInitializer {
 			new BlockItem(BLOCK_OF_DARK_DIAMOND, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
-	public static final Item FUSED_DIAMOND = Registry.register(
-			Registry.ITEM,
-			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond"),
-			new DiamondItem(true)
-	);
-
 	public static final Item RED_DIAMOND = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond"),
@@ -158,6 +152,12 @@ public class ExtensiveDiamonds implements ModInitializer {
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond"),
 			new DiamondItem(false)
+	);
+
+	public static final Item FUSED_DIAMOND = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond"),
+			new DiamondItem(true)
 	);
 
 	// SWORDS
@@ -180,6 +180,12 @@ public class ExtensiveDiamonds implements ModInitializer {
 			new DarkDiamondSwordItem(ModToolMaterials.DARK_DIAMOND, 8, 2f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
+	public static final Item FUSED_DIAMOND_SWORD = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_sword"),
+			new DarkDiamondSwordItem(ModToolMaterials.FUSED_DIAMOND, 13, 2f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+	
 	@Override
 	public void onInitialize() {
 		ModConfiguredFeatures.registerConfiguredFeatures();

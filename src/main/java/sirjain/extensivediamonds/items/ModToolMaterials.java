@@ -13,12 +13,16 @@ public enum ModToolMaterials implements ToolMaterial {
         return Ingredient.ofItems(new ItemConvertible[]{ExtensiveDiamonds.RED_DIAMOND});
     }),
 
-    GREEN_DIAMOND(3, 1149, 8.0F, 0.0F, 16, () -> {
+    GREEN_DIAMOND(3, 1149, 7.0F, 0.0F, 16, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ExtensiveDiamonds.GREEN_DIAMOND});
     }),
 
     DARK_DIAMOND(4, 1729, 9.0F, 0.0F, 18, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ExtensiveDiamonds.DARK_DIAMOND});
+    }),
+
+    FUSED_DIAMOND(5, 1729, 9.0F, 0.0F, 22, () -> {
+        return Ingredient.ofItems(new ItemConvertible[]{ExtensiveDiamonds.FUSED_DIAMOND});
     });
 
     private final int miningLevel;
