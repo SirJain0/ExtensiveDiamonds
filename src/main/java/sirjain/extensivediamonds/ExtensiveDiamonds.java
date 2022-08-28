@@ -11,6 +11,9 @@ import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.items.*;
+import sirjain.extensivediamonds.items.toolset.ModAxeItem;
+import sirjain.extensivediamonds.items.toolset.ModHoeItem;
+import sirjain.extensivediamonds.items.toolset.ModPickaxeItem;
 import sirjain.extensivediamonds.painting.ModPaintings;
 import sirjain.extensivediamonds.world.feature.ModConfiguredFeatures;
 import sirjain.extensivediamonds.world.gen.ModOreGeneration;
@@ -185,7 +188,31 @@ public class ExtensiveDiamonds implements ModInitializer {
 			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_sword"),
 			new DarkDiamondSwordItem(ModToolMaterials.FUSED_DIAMOND, 13, 2f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
-	
+
+	public static final Item FUSED_DIAMOND_AXE = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_axe"),
+			new ModAxeItem(ModToolMaterials.FUSED_DIAMOND, 6, 2.5f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Item FUSED_DIAMOND_HOE = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_hoe"),
+			new ModHoeItem(ModToolMaterials.FUSED_DIAMOND, 3, 2f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Item FUSED_DIAMOND_SHOVEL = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_shovel"),
+			new ShovelItem(ModToolMaterials.FUSED_DIAMOND, 4, 2.5f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Item FUSED_DIAMOND_PICKAXE = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_pickaxe"),
+			new ModPickaxeItem(ModToolMaterials.FUSED_DIAMOND, 5, 2f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
 	@Override
 	public void onInitialize() {
 		ModConfiguredFeatures.registerConfiguredFeatures();

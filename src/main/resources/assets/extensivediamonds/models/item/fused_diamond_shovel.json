@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "extensivediamonds:item/fused_diamond_shovel"
+  }
+}
