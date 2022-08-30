@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.items;
+package sirjain.extensivediamonds.items.toolset;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -21,10 +21,10 @@ public class FusedDiamondSwordItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 6), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 18, 2), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 20, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 12, 6), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 110, 6), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 60, 2), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 60, 1), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 80, 3), attacker);
         return super.postHit(stack, target, attacker);
     }
 }
