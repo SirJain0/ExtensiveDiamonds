@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "extensivediamonds:block/gem_charger"
+    },
+    "facing=south": {
+      "model": "extensivediamonds:block/gem_charger",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extensivediamonds:block/gem_charger",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "extensivediamonds:block/gem_charger",
+      "y": 90
+    }
+  }
+}

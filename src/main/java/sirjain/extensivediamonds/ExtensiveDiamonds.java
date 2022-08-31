@@ -10,6 +10,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sirjain.extensivediamonds.block.custom.GemChargerBlock;
 import sirjain.extensivediamonds.items.*;
 import sirjain.extensivediamonds.items.toolset.*;
 import sirjain.extensivediamonds.painting.ModPaintings;
@@ -137,6 +138,8 @@ public class ExtensiveDiamonds implements ModInitializer {
 			new BlockItem(BLOCK_OF_DARK_DIAMOND, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
+	// == GEMS ==
+
 	public static final Item RED_DIAMOND = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond"),
@@ -209,6 +212,18 @@ public class ExtensiveDiamonds implements ModInitializer {
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_pickaxe"),
 			new FusedDiamondPickaxeItem(ModToolMaterials.FUSED_DIAMOND, 5, 2f, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Block GEM_CHARGER = Registry.register(
+			Registry.BLOCK,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
+			new GemChargerBlock(FabricBlockSettings.of(Material.STONE).requiresTool().nonOpaque().strength(3.0f, 3.0f))
+	);
+
+	public static final Item GEM_CHARGER_ITEM = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
+			new BlockItem(GEM_CHARGER, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	@Override
