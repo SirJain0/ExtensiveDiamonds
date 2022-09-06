@@ -11,9 +11,11 @@ import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.block.custom.GemChargerBlock;
+import sirjain.extensivediamonds.block.entity.ModBlockEntities;
 import sirjain.extensivediamonds.items.*;
 import sirjain.extensivediamonds.items.toolset.*;
 import sirjain.extensivediamonds.painting.ModPaintings;
+import sirjain.extensivediamonds.screen.ModScreenHandlers;
 import sirjain.extensivediamonds.world.feature.ModConfiguredFeatures;
 import sirjain.extensivediamonds.world.gen.ModOreGeneration;
 
@@ -231,5 +233,8 @@ public class ExtensiveDiamonds implements ModInitializer {
 		ModConfiguredFeatures.registerConfiguredFeatures();
 		ModOreGeneration.generateOres();
 		ModPaintings.registerPaintings();
+
+		ModBlockEntities.registerBlockEntites();
+		ModScreenHandlers.registerScreenHandlers();
 	}
 }

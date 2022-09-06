@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "sirjain.extensivediamonds.ExtensiveDiamonds"
+    ],
+    "client": [
+      "sirjain.extensivediamonds.ExtensiveDiamondsClient"
     ]
   },
   "depends": {
