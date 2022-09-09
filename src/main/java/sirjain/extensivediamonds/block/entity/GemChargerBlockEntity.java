@@ -6,7 +6,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -32,19 +31,17 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
         super(ModBlockEntities.GEM_CHARGER, blockpos, blockstate);
         this.delegate = new PropertyDelegate() {
             public int get(int index) {
-                switch (index) {
-                    case 0: return GemChargerBlockEntity.this.fuelProgress;
-                    case 1: return GemChargerBlockEntity.this.maxProgress;
-                    default: return 0;
-                }
+                return switch (index) {
+                    case 0 -> GemChargerBlockEntity.this.fuelProgress;
+                    case 1 -> GemChargerBlockEntity.this.maxProgress;
+                    default -> 0;
+                };
             }
 
             public void set(int index, int value) {
-                switch(index) {
-                    case 0: GemChargerBlockEntity.this.fuelProgress = value;
-                        break;
-                    case 1: GemChargerBlockEntity.this.maxProgress = value;
-                        break;
+                switch (index) {
+                    case 0 -> GemChargerBlockEntity.this.fuelProgress = value;
+                    case 1 -> GemChargerBlockEntity.this.maxProgress = value;
                 }
             }
 
@@ -112,9 +109,11 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
         }
         
         if(hasRecipe(entity)) {
+            entity.removeStack(0, 1);
             entity.removeStack(1, 1);
+            entity.removeStack(2, 1);
             
-            entity.setStack(2, new ItemStack(ExtensiveDiamonds.FUSED_DIAMOND, entity.getStack(2).getCount() + 1));
+            entity.setStack(3, new ItemStack(ExtensiveDiamonds.FUSED_DIAMOND, entity.getStack(3).getCount() + 1));
         }
     }
 
@@ -123,16 +122,18 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
         for(int x = 0; x < entity.size(); x++) {
             inventory.setStack(x, entity.getStack(x));
         }
-        boolean hasRawGemInFirstSlot = entity.getStack(1).getItem() == ExtensiveDiamonds.FUSED_DIAMOND;
+        boolean hasRedGem = entity.getStack(0).getItem() == ExtensiveDiamonds.RED_DIAMOND;
+        boolean hasGreenGem = entity.getStack(1).getItem() == ExtensiveDiamonds.GREEN_DIAMOND;
+        boolean hasDarkGem = entity.getStack(2).getItem() == ExtensiveDiamonds.DARK_DIAMOND;
 
-        return hasRawGemInFirstSlot && canInsertAmountIntoOutputSlot(inventory,1) && canInsertItemIntoOutputSlot(inventory, ExtensiveDiamonds.FUSED_DIAMOND);
+        return hasRedGem && hasGreenGem && hasDarkGem && canInsertAmountIntoOutputSlot(inventory, 1) && canInsertItemIntoOutputSlot(inventory);
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty();
+    private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory) {
+        return inventory.getStack(0).isEmpty() && inventory.getStack(0).getItem() == ExtensiveDiamonds.RED_DIAMOND || inventory.getStack(1).isEmpty() && inventory.getStack(1).getItem() == ExtensiveDiamonds.GREEN_DIAMOND || inventory.getStack(2).isEmpty() && inventory.getStack(2).getItem() == ExtensiveDiamonds.DARK_DIAMOND;
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int count) {
-        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
+        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount() && inventory.getStack(1).getMaxCount() > inventory.getStack(1).getCount() && inventory.getStack(0).getMaxCount() > inventory.getStack(0).getCount();
     }
 }
