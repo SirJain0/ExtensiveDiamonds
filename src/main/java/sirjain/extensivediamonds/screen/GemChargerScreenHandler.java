@@ -15,7 +15,7 @@ public class GemChargerScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public GemChargerScreenHandler(int syncId, PlayerInventory inventory) {
-        this(syncId, inventory, new SimpleInventory(3), new ArrayPropertyDelegate(2));
+        this(syncId, inventory, new SimpleInventory(4), new ArrayPropertyDelegate(2));
     }
 
     public GemChargerScreenHandler(int syncId, PlayerInventory playerInv, Inventory inventory, PropertyDelegate delegate) {
