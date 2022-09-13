@@ -21,7 +21,7 @@ import sirjain.extensivediamonds.screen.GemChargerScreenHandler;
 
 public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory =
-            DefaultedList.ofSize(3, ItemStack.EMPTY);
+            DefaultedList.ofSize(4, ItemStack.EMPTY);
 
     protected final PropertyDelegate delegate;
     private int fuelProgress = 0;
