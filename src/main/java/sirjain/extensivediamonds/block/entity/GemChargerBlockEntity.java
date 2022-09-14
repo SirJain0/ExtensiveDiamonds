@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -20,28 +21,27 @@ import sirjain.extensivediamonds.ExtensiveDiamonds;
 import sirjain.extensivediamonds.screen.GemChargerScreenHandler;
 
 public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory =
-            DefaultedList.ofSize(4, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
 
-    protected final PropertyDelegate delegate;
-    private int fuelProgress = 0;
+    protected final PropertyDelegate propertyDelegate;
+    private int progress = 0;
     private int maxProgress = 72;
 
-    public GemChargerBlockEntity(BlockPos blockpos, BlockState blockstate) {
-        super(ModBlockEntities.GEM_CHARGER, blockpos, blockstate);
-        this.delegate = new PropertyDelegate() {
+    public GemChargerBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.GEM_CHARGER, pos, state);
+        this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {
-                return switch (index) {
-                    case 0 -> GemChargerBlockEntity.this.fuelProgress;
-                    case 1 -> GemChargerBlockEntity.this.maxProgress;
-                    default -> 0;
-                };
+                switch (index) {
+                    case 0: return GemChargerBlockEntity.this.progress;
+                    case 1: return GemChargerBlockEntity.this.maxProgress;
+                    default: return 0;
+                }
             }
 
             public void set(int index, int value) {
-                switch (index) {
-                    case 0 -> GemChargerBlockEntity.this.fuelProgress = value;
-                    case 1 -> GemChargerBlockEntity.this.maxProgress = value;
+                switch(index) {
+                    case 0: GemChargerBlockEntity.this.progress = value; break;
+                    case 1: GemChargerBlockEntity.this.maxProgress = value; break;
                 }
             }
 
@@ -63,77 +63,78 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
 
     @Nullable
     @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory inventory, PlayerEntity player) {
-        return new GemChargerScreenHandler(syncId, inventory, this, this.delegate);
+    public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
+        return new GemChargerScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
 
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("gem_charger.progress", fuelProgress);
+        nbt.putInt("gem_charger.progress", progress);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
-        fuelProgress = nbt.getInt("gem_charger.progress");
+        progress = nbt.getInt("gem_charger.progress");
     }
 
     private void resetProgress() {
-        this.fuelProgress = 0;
+        this.progress = 0;
     }
 
-    public static void tick(World world, BlockPos blockPos, BlockState blockState, GemChargerBlockEntity entity) {
-        if (world.isClient()) {
+    public static void tick(World world, BlockPos blockPos, BlockState state, GemChargerBlockEntity entity) {
+        if(world.isClient()) {
             return;
         }
 
         if(hasRecipe(entity)) {
-            entity.fuelProgress++;
-            markDirty(world, blockPos, blockState);
-            if(entity.fuelProgress >= entity.maxProgress) {
+            entity.progress++;
+            markDirty(world, blockPos, state);
+            if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
-            } else {
-                entity.resetProgress();
-                markDirty(world, blockPos, blockState);
             }
+        } else {
+            entity.resetProgress();
+            markDirty(world, blockPos, state);
         }
     }
 
     private static void craftItem(GemChargerBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
-        for(int x = 0; x < entity.size(); x++) {
-            inventory.setStack(x, entity.getStack(x));
+        for (int i = 0; i < entity.size(); i++) {
+            inventory.setStack(i, entity.getStack(i));
         }
-        
+
         if(hasRecipe(entity)) {
-            entity.removeStack(0, 1);
             entity.removeStack(1, 1);
-            entity.removeStack(2, 1);
-            
-            entity.setStack(3, new ItemStack(ExtensiveDiamonds.FUSED_DIAMOND, entity.getStack(3).getCount() + 1));
+
+            entity.setStack(3, new ItemStack(ExtensiveDiamonds.FUSED_DIAMOND,
+                    entity.getStack(3).getCount() + 1));
+
+            entity.resetProgress();
         }
     }
 
     private static boolean hasRecipe(GemChargerBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
-        for(int x = 0; x < entity.size(); x++) {
-            inventory.setStack(x, entity.getStack(x));
+        for (int i = 0; i < entity.size(); i++) {
+            inventory.setStack(i, entity.getStack(i));
         }
-        boolean hasRedGem = entity.getStack(0).getItem() == ExtensiveDiamonds.RED_DIAMOND;
-        boolean hasGreenGem = entity.getStack(1).getItem() == ExtensiveDiamonds.GREEN_DIAMOND;
-        boolean hasDarkGem = entity.getStack(2).getItem() == ExtensiveDiamonds.DARK_DIAMOND;
 
-        return hasRedGem && hasGreenGem && hasDarkGem && canInsertAmountIntoOutputSlot(inventory, 1) && canInsertItemIntoOutputSlot(inventory);
+        boolean hasRawGemInFirstSlot = entity.getStack(1).getItem() == ExtensiveDiamonds.RED_DIAMOND;
+
+        return hasRawGemInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, ExtensiveDiamonds.FUSED_DIAMOND);
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(0).isEmpty() && inventory.getStack(0).getItem() == ExtensiveDiamonds.RED_DIAMOND || inventory.getStack(1).isEmpty() && inventory.getStack(1).getItem() == ExtensiveDiamonds.GREEN_DIAMOND || inventory.getStack(2).isEmpty() && inventory.getStack(2).getItem() == ExtensiveDiamonds.DARK_DIAMOND;
+    private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
+        return inventory.getStack(3).getItem() == output || inventory.getStack(3).isEmpty();
     }
 
-    private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory, int count) {
-        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount() && inventory.getStack(1).getMaxCount() > inventory.getStack(1).getCount() && inventory.getStack(0).getMaxCount() > inventory.getStack(0).getCount();
+    private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
+        return inventory.getStack(3).getMaxCount() > inventory.getStack(3).getCount();
     }
 }

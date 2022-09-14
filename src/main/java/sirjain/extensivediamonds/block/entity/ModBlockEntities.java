@@ -9,12 +9,11 @@ import sirjain.extensivediamonds.ExtensiveDiamonds;
 public class ModBlockEntities {
     public static BlockEntityType<GemChargerBlockEntity> GEM_CHARGER;
 
-    public static void registerBlockEntites() {
+    public static void registerBlockEntities() {
         GEM_CHARGER = Registry.register(
                 Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
                 FabricBlockEntityTypeBuilder.create(GemChargerBlockEntity::new,
-                        ExtensiveDiamonds.GEM_CHARGER).build(null)
-        );
+                        ExtensiveDiamonds.GEM_CHARGER).build(null));
     }
 }

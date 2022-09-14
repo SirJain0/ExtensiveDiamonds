@@ -234,7 +234,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 		ModOreGeneration.generateOres();
 		ModPaintings.registerPaintings();
 
-		ModBlockEntities.registerBlockEntites();
-		ModScreenHandlers.registerScreenHandlers();
+		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerAllScreenHandlers();
 	}
 }
