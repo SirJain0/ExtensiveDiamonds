@@ -31,17 +31,17 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
         super(ModBlockEntities.GEM_CHARGER, pos, state);
         this.delegate = new PropertyDelegate() {
             public int get(int index) {
-                switch (index) {
-                    case 0: return GemChargerBlockEntity.this.fuelProgress;
-                    case 1: return GemChargerBlockEntity.this.maxProgress;
-                    default: return 0;
-                }
+                return switch (index) {
+                    case 0 -> GemChargerBlockEntity.this.fuelProgress;
+                    case 1 -> GemChargerBlockEntity.this.maxProgress;
+                    default -> 0;
+                };
             }
 
             public void set(int index, int value) {
-                switch(index) {
-                    case 0: GemChargerBlockEntity.this.fuelProgress = value; break;
-                    case 1: GemChargerBlockEntity.this.maxProgress = value; break;
+                switch (index) {
+                    case 0 -> GemChargerBlockEntity.this.fuelProgress = value;
+                    case 1 -> GemChargerBlockEntity.this.maxProgress = value;
                 }
             }
 
