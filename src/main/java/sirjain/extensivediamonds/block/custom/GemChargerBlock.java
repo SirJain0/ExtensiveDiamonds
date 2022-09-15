@@ -94,8 +94,8 @@ public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvi
 
     @Nullable
     @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new GemChargerBlockEntity(pos, state);
+    public BlockEntity createBlockEntity(BlockPos blockPos, BlockState blockState) {
+        return new GemChargerBlockEntity(blockPos, blockState);
     }
 
     @Nullable

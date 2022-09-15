@@ -23,16 +23,16 @@ import sirjain.extensivediamonds.screen.GemChargerScreenHandler;
 public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
 
-    protected final PropertyDelegate propertyDelegate;
-    private int progress = 0;
+    protected final PropertyDelegate delegate;
+    private int fuelProgress = 0;
     private int maxProgress = 72;
 
     public GemChargerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.GEM_CHARGER, pos, state);
-        this.propertyDelegate = new PropertyDelegate() {
+        this.delegate = new PropertyDelegate() {
             public int get(int index) {
                 switch (index) {
-                    case 0: return GemChargerBlockEntity.this.progress;
+                    case 0: return GemChargerBlockEntity.this.fuelProgress;
                     case 1: return GemChargerBlockEntity.this.maxProgress;
                     default: return 0;
                 }
@@ -40,7 +40,7 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
 
             public void set(int index, int value) {
                 switch(index) {
-                    case 0: GemChargerBlockEntity.this.progress = value; break;
+                    case 0: GemChargerBlockEntity.this.fuelProgress = value; break;
                     case 1: GemChargerBlockEntity.this.maxProgress = value; break;
                 }
             }
@@ -63,68 +63,68 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
 
     @Nullable
     @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new GemChargerScreenHandler(syncId, inv, this, this.propertyDelegate);
+    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
+        return new GemChargerScreenHandler(syncId, playerInventory, this, this.delegate);
     }
 
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("gem_charger.progress", progress);
+        nbt.putInt("gem_charger.progress", fuelProgress);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
-        progress = nbt.getInt("gem_charger.progress");
+        fuelProgress = nbt.getInt("gem_charger.progress");
     }
 
     private void resetProgress() {
-        this.progress = 0;
+        this.fuelProgress = 0;
     }
 
-    public static void tick(World world, BlockPos blockPos, BlockState state, GemChargerBlockEntity entity) {
+    public static void tick(World world, BlockPos blockPos, BlockState blockState, GemChargerBlockEntity charger) {
         if(world.isClient()) {
             return;
         }
 
-        if(hasRecipe(entity)) {
-            entity.progress++;
-            markDirty(world, blockPos, state);
-            if(entity.progress >= entity.maxProgress) {
-                craftItem(entity);
+        if(hasRecipe(charger)) {
+            charger.fuelProgress++;
+            markDirty(world, blockPos, blockState);
+            if(charger.fuelProgress >= charger.maxProgress) {
+                craftItem(charger);
             }
         } else {
-            entity.resetProgress();
-            markDirty(world, blockPos, state);
+            charger.resetProgress();
+            markDirty(world, blockPos, blockState);
         }
     }
 
-    private static void craftItem(GemChargerBlockEntity entity) {
-        SimpleInventory inventory = new SimpleInventory(entity.size());
-        for (int i = 0; i < entity.size(); i++) {
-            inventory.setStack(i, entity.getStack(i));
+    private static void craftItem(GemChargerBlockEntity charger) {
+        SimpleInventory inventory = new SimpleInventory(charger.size());
+        for (int i = 0; i < charger.size(); i++) {
+            inventory.setStack(i, charger.getStack(i));
         }
 
-        if(hasRecipe(entity)) {
-            entity.removeStack(1, 1);
+        if(hasRecipe(charger)) {
+            charger.removeStack(1, 1);
 
-            entity.setStack(3, new ItemStack(ExtensiveDiamonds.FUSED_DIAMOND,
-                    entity.getStack(3).getCount() + 1));
+            charger.setStack(3, new ItemStack(ExtensiveDiamonds.FUSED_DIAMOND,
+                    charger.getStack(3).getCount() + 1));
 
-            entity.resetProgress();
+            charger.resetProgress();
         }
     }
 
-    private static boolean hasRecipe(GemChargerBlockEntity entity) {
-        SimpleInventory inventory = new SimpleInventory(entity.size());
-        for (int i = 0; i < entity.size(); i++) {
-            inventory.setStack(i, entity.getStack(i));
+    private static boolean hasRecipe(GemChargerBlockEntity charger) {
+        SimpleInventory inventory = new SimpleInventory(charger.size());
+        for (int i = 0; i < charger.size(); i++) {
+            inventory.setStack(i, charger.getStack(i));
         }
 
-        boolean hasRawGemInFirstSlot = entity.getStack(1).getItem() == ExtensiveDiamonds.RED_DIAMOND;
+        boolean hasRawGemInFirstSlot = charger.getStack(1).getItem() == ExtensiveDiamonds.RED_DIAMOND;
 
         return hasRawGemInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, ExtensiveDiamonds.FUSED_DIAMOND);
