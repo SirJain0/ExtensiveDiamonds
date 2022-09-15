@@ -90,7 +90,7 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
             return;
         }
 
-        if(hasRecipe(charger)) {
+        if(hasValidRecipe(charger)) {
             charger.fuelProgress++;
             markDirty(world, blockPos, blockState);
             if(charger.fuelProgress >= charger.maxProgress) {
@@ -108,8 +108,10 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
             inventory.setStack(i, charger.getStack(i));
         }
 
-        if(hasRecipe(charger)) {
+        if(hasValidRecipe(charger)) {
+            charger.removeStack(0, 1);
             charger.removeStack(1, 1);
+            charger.removeStack(2, 1);
 
             charger.setStack(3, new ItemStack(ExtensiveDiamonds.FUSED_DIAMOND,
                     charger.getStack(3).getCount() + 1));
@@ -118,15 +120,17 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
         }
     }
 
-    private static boolean hasRecipe(GemChargerBlockEntity charger) {
+    private static boolean hasValidRecipe(GemChargerBlockEntity charger) {
         SimpleInventory inventory = new SimpleInventory(charger.size());
         for (int i = 0; i < charger.size(); i++) {
             inventory.setStack(i, charger.getStack(i));
         }
 
-        boolean hasRawGemInFirstSlot = charger.getStack(1).getItem() == ExtensiveDiamonds.RED_DIAMOND;
+        boolean hasGemOne = charger.getStack(0).getItem() == ExtensiveDiamonds.RED_DIAMOND || charger.getStack(1).getItem() == ExtensiveDiamonds.RED_DIAMOND || charger.getStack(2).getItem() == ExtensiveDiamonds.RED_DIAMOND;
+        boolean hasGemTwo = charger.getStack(0).getItem() == ExtensiveDiamonds.GREEN_DIAMOND || charger.getStack(1).getItem() == ExtensiveDiamonds.GREEN_DIAMOND || charger.getStack(2).getItem() == ExtensiveDiamonds.GREEN_DIAMOND;
+        boolean hasGemThree = charger.getStack(0).getItem() == ExtensiveDiamonds.DARK_DIAMOND || charger.getStack(1).getItem() == ExtensiveDiamonds.DARK_DIAMOND || charger.getStack(2).getItem() == ExtensiveDiamonds.DARK_DIAMOND;
 
-        return hasRawGemInFirstSlot && canInsertAmountIntoOutputSlot(inventory)
+        return hasGemOne && hasGemTwo && hasGemThree && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, ExtensiveDiamonds.FUSED_DIAMOND);
     }
 
