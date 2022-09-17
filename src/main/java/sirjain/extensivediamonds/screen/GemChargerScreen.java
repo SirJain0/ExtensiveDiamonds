@@ -34,9 +34,12 @@ public class GemChargerScreen extends HandledScreen<GemChargerScreenHandler> {
         renderProgressArrow(matrices, x, y);
     }
 
-    private void renderProgressArrow(MatrixStack matrixStack, int x, int y) {
+    private void renderProgressArrow(MatrixStack stack, int x, int y) {
         if(handler.isCrafting()) {
-            drawTexture(matrixStack, x + 28, y + 52, 0, 158, 12, handler.getScaledProgress());
+            drawTexture(stack, x + 61, y + 39, 0, 171, handler.getScaledProgress(), 13);
+            // u and v = coordinates of progress bar texture
+            // x and y = coordinates of starting point
+            // height = height of progress bar's dimensions
         }
     }
 
