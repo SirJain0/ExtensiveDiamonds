@@ -10,6 +10,9 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sirjain.extensivediamonds.block.custom.BlockOfDarkDiamond;
+import sirjain.extensivediamonds.block.custom.BlockOfGreenDiamond;
+import sirjain.extensivediamonds.block.custom.BlockOfRedDiamond;
 import sirjain.extensivediamonds.block.custom.GemChargerBlock;
 import sirjain.extensivediamonds.block.entity.ModBlockEntities;
 import sirjain.extensivediamonds.items.*;
@@ -107,7 +110,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Block BLOCK_OF_GREEN_DIAMOND = Registry.register(
 			Registry.BLOCK,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_green_diamond"),
-			new OreBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+			new BlockOfGreenDiamond(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f))
 	);
 
 	public static final Item BLOCK_OF_GREEN_DIAMOND_BLOCK = Registry.register(
@@ -119,7 +122,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Block BLOCK_OF_RED_DIAMOND = Registry.register(
 			Registry.BLOCK,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_red_diamond"),
-			new OreBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+			new BlockOfRedDiamond(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f))
 	);
 
 	public static final Item BLOCK_OF_RED_DIAMOND_BLOCK = Registry.register(
@@ -131,7 +134,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Block BLOCK_OF_DARK_DIAMOND = Registry.register(
 			Registry.BLOCK,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_dark_diamond"),
-			new OreBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+			new BlockOfDarkDiamond(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f))
 	);
 
 	public static final Item BLOCK_OF_DARK_DIAMOND_BLOCK = Registry.register(
