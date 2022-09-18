@@ -9,12 +9,13 @@
     "SirJain"
   ],
   "contact": {
-    "homepage": "https://twitter.com"
+    "twitter": "https://twitter.com/SirJain2",
+    "discord": "https://discord.gg/wM4CKTbFVN",
+    "github": "https://github.com/SirJain0/extensive_diamonds",
+    "issues": "https://github.com/SirJain0/extensive_diamonds/issues"
   },
-
   "license": "MIT",
   "icon": "assets/extensivediamonds/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -27,8 +28,16 @@
   "depends": {
     "fabricloader": ">=0.14.6",
     "fabric": "*",
-    "minecraft": "~1.19",
+    "minecraft": ">=1.19",
     "java": ">=17"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/wM4CKTbFVN",
+        "modmenu.twitter": "https://twitter.com/SirJain2"
+      }
+    }
   },
   "suggests": {
     "another-mod": "*"
