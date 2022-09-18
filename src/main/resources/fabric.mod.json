@@ -15,7 +15,7 @@
     "issues": "https://github.com/SirJain0/extensive_diamonds/issues"
   },
   "license": "MIT",
-  "icon": "assets/extensivediamonds/icon.png",
+  "icon": "assets/extensivediamonds/edlogo.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -30,14 +30,6 @@
     "fabric": "*",
     "minecraft": ">=1.19",
     "java": ">=17"
-  },
-  "custom": {
-    "modmenu": {
-      "links": {
-        "modmenu.discord": "https://discord.gg/wM4CKTbFVN",
-        "modmenu.twitter": "https://twitter.com/SirJain2"
-      }
-    }
   },
   "suggests": {
     "another-mod": "*"
