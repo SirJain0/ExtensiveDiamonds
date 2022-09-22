@@ -33,7 +33,7 @@ public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvi
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 10, 16);
+    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 25, 16);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
