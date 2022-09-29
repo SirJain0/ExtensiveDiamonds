@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.block.entity;
+package sirjain.extensivediamonds.block.gem_charger.entity;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;

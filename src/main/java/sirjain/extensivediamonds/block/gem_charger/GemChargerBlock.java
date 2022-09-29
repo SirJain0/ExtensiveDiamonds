@@ -1,8 +1,7 @@
-package sirjain.extensivediamonds.block.custom;
+package sirjain.extensivediamonds.block.gem_charger;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -23,8 +22,8 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import sirjain.extensivediamonds.block.entity.GemChargerBlockEntity;
-import sirjain.extensivediamonds.block.entity.ModBlockEntities;
+import sirjain.extensivediamonds.block.gem_charger.entity.GemChargerBlockEntity;
+import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
 
 public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;

@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.block.entity;
+package sirjain.extensivediamonds.block.gem_charger.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -18,6 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
+import sirjain.extensivediamonds.block.gem_charger.ImplementedInventory;
 import sirjain.extensivediamonds.screen.GemChargerScreenHandler;
 
 public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {

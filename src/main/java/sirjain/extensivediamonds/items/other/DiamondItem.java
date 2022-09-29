@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.items;
+package sirjain.extensivediamonds.items.other;
 
 import sirjain.extensivediamonds.ExtensiveDiamonds;
 import net.minecraft.item.Item;

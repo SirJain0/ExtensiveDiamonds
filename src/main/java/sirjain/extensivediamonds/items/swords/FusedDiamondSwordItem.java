@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.items;
+package sirjain.extensivediamonds.items.swords;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -14,15 +14,17 @@ import sirjain.extensivediamonds.ExtensiveDiamonds;
 
 import java.util.List;
 
-public class DarkDiamondSwordItem extends SwordItem {
-    public DarkDiamondSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Item.Settings settings) {
+public class FusedDiamondSwordItem extends SwordItem {
+    public FusedDiamondSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Item.Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 70, 2), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 120, 1), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 110, 6), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 60, 2), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 60, 1), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 80, 3), attacker);
         return super.postHit(stack, target, attacker);
     }
 }

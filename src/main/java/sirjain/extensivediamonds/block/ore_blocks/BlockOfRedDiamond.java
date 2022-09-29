@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.block.custom;
+package sirjain.extensivediamonds.block.ore_blocks;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.OreBlock;

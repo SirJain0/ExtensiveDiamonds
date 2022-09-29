@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.items;
+package sirjain.extensivediamonds.items.tool_material;
 
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ToolMaterial;
