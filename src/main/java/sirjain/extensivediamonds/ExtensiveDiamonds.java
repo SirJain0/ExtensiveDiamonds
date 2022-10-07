@@ -15,7 +15,6 @@ import sirjain.extensivediamonds.block.ore_blocks.BlockOfGreenDiamond;
 import sirjain.extensivediamonds.block.ore_blocks.BlockOfRedDiamond;
 import sirjain.extensivediamonds.block.gem_charger.GemChargerBlock;
 import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
-import sirjain.extensivediamonds.items.other.DiamondItem;
 import sirjain.extensivediamonds.items.swords.DarkDiamondSwordItem;
 import sirjain.extensivediamonds.items.swords.FusedDiamondSwordItem;
 import sirjain.extensivediamonds.items.swords.GreenDiamondSwordItem;
@@ -153,25 +152,25 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Item RED_DIAMOND = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond"),
-			new DiamondItem(false)
+			new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Item GREEN_DIAMOND = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond"),
-			new DiamondItem(false)
+			new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Item DARK_DIAMOND = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond"),
-			new DiamondItem(false)
+			new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Item FUSED_DIAMOND = Registry.register(
 			Registry.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond"),
-			new DiamondItem(true)
+			new Item(new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	// SWORDS
