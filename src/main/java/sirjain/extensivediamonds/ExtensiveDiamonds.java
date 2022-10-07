@@ -226,7 +226,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final Block GEM_CHARGER = Registry.register(
 			Registry.BLOCK,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
-			new GemChargerBlock(FabricBlockSettings.of(Material.STONE).requiresTool().nonOpaque().strength(3.0f, 3.0f))
+			new GemChargerBlock(FabricBlockSettings.of(Material.STONE).requiresTool().nonOpaque().strength(3.0f, 3.0f).luminance((state) -> 6))
 	);
 
 	public static final Item GEM_CHARGER_ITEM = Registry.register(
