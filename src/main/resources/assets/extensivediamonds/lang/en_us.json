@@ -28,5 +28,10 @@
   "item.extensivediamonds.fused_diamond_pickaxe": "Fused Diamond Pickaxe",
   "item.extensivediamonds.fused_diamond_axe": "Fused Diamond Axe",
   "item.extensivediamonds.fused_diamond_hoe": "Fused Diamond Hoe",
-  "item.extensivediamonds.fused_diamond_shovel": "Fused Diamond Shovel"
+  "item.extensivediamonds.fused_diamond_shovel": "Fused Diamond Shovel",
+
+  "item.extensivediamonds.fused_diamond_helmet": "Fused Diamond Helmet",
+  "item.extensivediamonds.fused_diamond_chestplate": "Fused Diamond Chestplate",
+  "item.extensivediamonds.fused_diamond_leggings": "Fused Diamond Leggings",
+  "item.extensivediamonds.fused_diamond_boots": "Fused Diamond Boots"
 }
