@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "extensivediamonds:fused_diamond"
+    }
+  },
+  "result": {
+    "item": "extensivediamonds:fused_diamond_leggings",
+    "count": 1
+  }
+}

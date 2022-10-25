@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.items.tool_material;
+package sirjain.extensivediamonds.items.material;
 
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ToolMaterial;
@@ -9,21 +9,13 @@ import sirjain.extensivediamonds.ExtensiveDiamonds;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    RED_DIAMOND(3, 1422, 8.0F, 0.0F, 30, () -> {
-        return Ingredient.ofItems(new ItemConvertible[]{ExtensiveDiamonds.RED_DIAMOND});
-    }),
+    RED_DIAMOND(3, 1422, 8.0F, 0.0F, 30, () -> Ingredient.ofItems(ExtensiveDiamonds.RED_DIAMOND)),
 
-    GREEN_DIAMOND(3, 1149, 7.0F, 0.0F, 16, () -> {
-        return Ingredient.ofItems(new ItemConvertible[]{ExtensiveDiamonds.GREEN_DIAMOND});
-    }),
+    GREEN_DIAMOND(3, 1149, 7.0F, 0.0F, 16, () -> Ingredient.ofItems(ExtensiveDiamonds.GREEN_DIAMOND)),
 
-    DARK_DIAMOND(4, 1729, 9.0F, 0.0F, 18, () -> {
-        return Ingredient.ofItems(new ItemConvertible[]{ExtensiveDiamonds.DARK_DIAMOND});
-    }),
+    DARK_DIAMOND(4, 1729, 9.0F, 0.0F, 18, () -> Ingredient.ofItems(ExtensiveDiamonds.DARK_DIAMOND)),
 
-    FUSED_DIAMOND(5, 1729, 9.0F, 0.0F, 22, () -> {
-        return Ingredient.ofItems(new ItemConvertible[]{ExtensiveDiamonds.FUSED_DIAMOND});
-    });
+    FUSED_DIAMOND(5, 1729, 9.0F, 0.0F, 22, () -> Ingredient.ofItems(ExtensiveDiamonds.FUSED_DIAMOND));
 
     private final int miningLevel;
     private final int itemDurability;

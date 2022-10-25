@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -15,11 +16,13 @@ import sirjain.extensivediamonds.block.ore_blocks.BlockOfGreenDiamond;
 import sirjain.extensivediamonds.block.ore_blocks.BlockOfRedDiamond;
 import sirjain.extensivediamonds.block.gem_charger.GemChargerBlock;
 import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
+import sirjain.extensivediamonds.items.material.FusedDiamondArmor;
+import sirjain.extensivediamonds.items.material.FusedDiamondArmorMaterial;
 import sirjain.extensivediamonds.items.swords.DarkDiamondSwordItem;
 import sirjain.extensivediamonds.items.swords.FusedDiamondSwordItem;
 import sirjain.extensivediamonds.items.swords.GreenDiamondSwordItem;
 import sirjain.extensivediamonds.items.swords.RedDiamondSwordItem;
-import sirjain.extensivediamonds.items.tool_material.ModToolMaterials;
+import sirjain.extensivediamonds.items.material.ModToolMaterials;
 import sirjain.extensivediamonds.items.toolset.*;
 import sirjain.extensivediamonds.painting.ModPaintings;
 import sirjain.extensivediamonds.screen.ModScreenHandlers;
@@ -227,6 +230,30 @@ public class ExtensiveDiamonds implements ModInitializer {
 			Registry.BLOCK,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
 			new GemChargerBlock(FabricBlockSettings.of(Material.STONE).requiresTool().nonOpaque().strength(3.0f, 3.0f).luminance((state) -> 6))
+	);
+
+	public static final Item FUSED_DIAMOND_HELMET = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_helmet"),
+			new FusedDiamondArmor(FusedDiamondArmorMaterial.material, EquipmentSlot.HEAD, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Item FUSED_DIAMOND_CHEST = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_chestplate"),
+			new FusedDiamondArmor(FusedDiamondArmorMaterial.material, EquipmentSlot.CHEST, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Item FUSED_DIAMOND_LEGS = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_leggings"),
+			new FusedDiamondArmor(FusedDiamondArmorMaterial.material, EquipmentSlot.LEGS, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
+	);
+
+	public static final Item FUSED_DIAMOND_BOOTS = Registry.register(
+			Registry.ITEM,
+			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_boots"),
+			new FusedDiamondArmor(FusedDiamondArmorMaterial.material, EquipmentSlot.FEET, new Item.Settings().group(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP))
 	);
 
 	public static final Item GEM_CHARGER_ITEM = Registry.register(
