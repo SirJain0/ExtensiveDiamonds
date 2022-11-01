@@ -1,10 +1,8 @@
 package sirjain.extensivediamonds.items.material;
 
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Lazy;
-import sirjain.extensivediamonds.ExtensiveDiamonds;
 import sirjain.extensivediamonds.registry.RegisterItems;
 
 import java.util.function.Supplier;

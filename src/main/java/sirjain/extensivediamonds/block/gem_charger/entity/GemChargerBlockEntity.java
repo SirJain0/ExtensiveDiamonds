@@ -17,7 +17,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import sirjain.extensivediamonds.ExtensiveDiamonds;
 import sirjain.extensivediamonds.block.gem_charger.ImplementedInventory;
 import sirjain.extensivediamonds.registry.RegisterItems;
 import sirjain.extensivediamonds.screen.GemChargerScreenHandler;
