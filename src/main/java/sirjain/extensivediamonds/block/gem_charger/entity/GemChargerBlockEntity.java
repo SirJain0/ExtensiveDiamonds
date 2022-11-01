@@ -121,6 +121,7 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
         }
     }
 
+    // Check: Does the player have the right recipe?
     private static boolean hasValidRecipe(GemChargerBlockEntity charger) {
         SimpleInventory inventory = new SimpleInventory(charger.size());
         for (int i = 0; i < charger.size(); i++) {

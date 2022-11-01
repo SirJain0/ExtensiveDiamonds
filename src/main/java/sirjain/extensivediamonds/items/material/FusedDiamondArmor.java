@@ -31,7 +31,7 @@ public class FusedDiamondArmor extends ArmorItem {
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
-    // Check 1 - armor slots are not empty
+    // Check 1: Is the player wearing armor?
     private boolean checkForWearingArmor(PlayerEntity player) {
         ItemStack head = player.getInventory().getArmorStack(0);
         ItemStack chest = player.getInventory().getArmorStack(1);
@@ -44,7 +44,7 @@ public class FusedDiamondArmor extends ArmorItem {
                 !boots.isEmpty();
     }
 
-    // Check 2 - armor slots have correct material
+    // Check 2: Is said armor the correct material?
     private boolean checkForCorrectArmor(PlayerEntity player) {
         ArmorItem head = (ArmorItem)player.getInventory().getArmorStack(0).getItem();
         ArmorItem chest = (ArmorItem)player.getInventory().getArmorStack(1).getItem();
