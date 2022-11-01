@@ -19,6 +19,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
 import sirjain.extensivediamonds.block.gem_charger.ImplementedInventory;
+import sirjain.extensivediamonds.registry.RegisterItems;
 import sirjain.extensivediamonds.screen.GemChargerScreenHandler;
 
 public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
@@ -114,7 +115,7 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
             charger.removeStack(1, 1);
             charger.removeStack(2, 1);
 
-            charger.setStack(3, new ItemStack(ExtensiveDiamonds.FUSED_DIAMOND,
+            charger.setStack(3, new ItemStack(RegisterItems.FUSED_DIAMOND,
                     charger.getStack(3).getCount() + 1));
 
             charger.resetProgress();
@@ -128,12 +129,12 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
             inventory.setStack(i, charger.getStack(i));
         }
 
-        boolean hasGemOne = charger.getStack(0).getItem() == ExtensiveDiamonds.RED_DIAMOND || charger.getStack(1).getItem() == ExtensiveDiamonds.RED_DIAMOND || charger.getStack(2).getItem() == ExtensiveDiamonds.RED_DIAMOND;
-        boolean hasGemTwo = charger.getStack(0).getItem() == ExtensiveDiamonds.GREEN_DIAMOND || charger.getStack(1).getItem() == ExtensiveDiamonds.GREEN_DIAMOND || charger.getStack(2).getItem() == ExtensiveDiamonds.GREEN_DIAMOND;
-        boolean hasGemThree = charger.getStack(0).getItem() == ExtensiveDiamonds.DARK_DIAMOND || charger.getStack(1).getItem() == ExtensiveDiamonds.DARK_DIAMOND || charger.getStack(2).getItem() == ExtensiveDiamonds.DARK_DIAMOND;
+        boolean hasGemOne = charger.getStack(0).getItem() == RegisterItems.RED_DIAMOND || charger.getStack(1).getItem() == RegisterItems.RED_DIAMOND || charger.getStack(2).getItem() == RegisterItems.RED_DIAMOND;
+        boolean hasGemTwo = charger.getStack(0).getItem() == RegisterItems.GREEN_DIAMOND || charger.getStack(1).getItem() == RegisterItems.GREEN_DIAMOND || charger.getStack(2).getItem() == RegisterItems.GREEN_DIAMOND;
+        boolean hasGemThree = charger.getStack(0).getItem() == RegisterItems.DARK_DIAMOND || charger.getStack(1).getItem() == RegisterItems.DARK_DIAMOND || charger.getStack(2).getItem() == RegisterItems.DARK_DIAMOND;
 
         return hasGemOne && hasGemTwo && hasGemThree && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, ExtensiveDiamonds.FUSED_DIAMOND);
+                && canInsertItemIntoOutputSlot(inventory, RegisterItems.FUSED_DIAMOND);
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
