@@ -11,10 +11,7 @@ import sirjain.extensivediamonds.screen.ModScreenHandlers;
 public class ExtensiveDiamondsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        // For gem charger
         HandledScreens.register(ModScreenHandlers.GEM_CHARGER_SCREEN_HANDLER, GemChargerScreen::new);
-
-        // For gem charger's cutout
         BlockRenderLayerMap.INSTANCE.putBlock(RegisterBlocks.GEM_CHARGER, RenderLayer.getCutout());
     }
 }
