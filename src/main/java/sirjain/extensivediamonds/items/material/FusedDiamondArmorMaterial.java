@@ -10,7 +10,7 @@ public class FusedDiamondArmorMaterial implements ArmorMaterial {
     public static final FusedDiamondArmorMaterial material = new FusedDiamondArmorMaterial();
 
     private static final int[] BASE_DURABILITY = new int[] {904, 1020, 929, 890};
-    private static final int[] PROTECTION_VALUES = new int[] {8, 12, 10, 8};
+    private static final int[] PROTECTION_VALUES = new int[] {8, 10, 12, 8};
 
     @Override
     public int getDurability(EquipmentSlot slot) {
