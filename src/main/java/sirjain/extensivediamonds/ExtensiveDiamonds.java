@@ -32,7 +32,7 @@ import sirjain.extensivediamonds.world.gen.ModOreGeneration;
 public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final ItemGroup EXTENSIVEDIAMONDS_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, MOD_ID), () -> new ItemStack(Items.BEDROCK));
+	public static final ItemGroup EXTENSIVEDIAMONDS_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, MOD_ID), () -> new ItemStack(ExtensiveDiamonds.FUSED_DIAMOND));
 
 	// ORE BLOCKS
 
