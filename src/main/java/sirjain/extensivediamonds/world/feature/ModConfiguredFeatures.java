@@ -21,13 +21,13 @@ public class ModConfiguredFeatures {
             OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, RegisterBlocks.DEEPSLATE_DARK_DIAMOND_ORE.getDefaultState()));
 
     public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> RED_DIAMOND_ORE =
-            ConfiguredFeatures.register("red_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_RED_DIAMOND_ORES, 4));
+            ConfiguredFeatures.register("red_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_RED_DIAMOND_ORES, 3));
 
     public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> GREEN_DIAMOND_ORE =
-            ConfiguredFeatures.register("green_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_GREEN_DIAMOND_ORES, 5));
+            ConfiguredFeatures.register("green_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_GREEN_DIAMOND_ORES, 3));
 
     public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> DARK_DIAMOND_ORE =
-            ConfiguredFeatures.register("dark_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_DARK_DIAMOND_ORES, 3));
+            ConfiguredFeatures.register("dark_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_DARK_DIAMOND_ORES, 4));
 
     public static void registerConfiguredFeatures() {
         ExtensiveDiamonds.LOGGER.debug("Registering the ModConfiguredFeatures for " + ExtensiveDiamonds.MOD_ID);
