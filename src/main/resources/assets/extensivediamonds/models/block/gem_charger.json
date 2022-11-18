@@ -1,10 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
-	"parent": "block/block",
 	"textures": {
-		"0": "extensivediamonds:block/gem_charger_new",
-		"particle": "extensivediamonds:block/gem_charger_new"
+		"0": "extensivediamonds:block/gem_charger",
+		"particle": "extensivediamonds:block/gem_charger"
 	},
 	"elements": [
 		{
@@ -201,7 +200,31 @@
 			}
 		}
 	],
-	"display": {},
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0.75, 0, 2],
+			"scale": [0.57, 0.57, 0.57]
+		},
+		"thirdperson_lefthand": {
+			"translation": [-0.75, 0, 2],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"firstperson_righthand": {
+			"rotation": [-31, 0, 0],
+			"translation": [0.5, 0, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 0.5, 0],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"gui": {
+			"rotation": [45, 45, 0],
+			"translation": [0, -0.5, 0],
+			"scale": [0.7, 0.7, 0.7]
+		}
+	},
 	"groups": [
 		0,
 		1,
