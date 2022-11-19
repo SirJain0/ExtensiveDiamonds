@@ -22,6 +22,7 @@ public class FusedDiamondArmor extends ArmorItem {
                 if(checkForWearingArmor(player) && checkForCorrectArmor(player)) {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, 20*3, 1));
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 20*3, 0));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20*3, 0));
                 }
             }
         }
