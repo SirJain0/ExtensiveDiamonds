@@ -15,7 +15,7 @@ public class RedDiamondSwordItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 6), attacker);
+        target.setOnFireFor(5);
         return super.postHit(stack, target, attacker);
     }
 }

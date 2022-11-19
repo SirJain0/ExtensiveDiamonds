@@ -15,11 +15,11 @@ public class FusedDiamondSwordItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 110, 6), attacker);
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 60, 2), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 60, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 80, 3), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 80, 1), attacker);
+        target.setOnFireFor(5);
+        attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 20, 1), attacker);
+
         return super.postHit(stack, target, attacker);
     }
 }
-
