@@ -11,11 +11,11 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final RegistryEntry<PlacedFeature> RED_DIAMOND_ORE_PLACED = PlacedFeatures.register("red_diamond_ore_placed",
             ModConfiguredFeatures.RED_DIAMOND_ORE, modifiersWithCount(5,
-                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(-45), YOffset.fixed(-57))));
+                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(-50), YOffset.fixed(-59))));
 
     public static final RegistryEntry<PlacedFeature> GREEN_DIAMOND_ORE_PLACED = PlacedFeatures.register("green_diamond_ore_placed",
             ModConfiguredFeatures.GREEN_DIAMOND_ORE, modifiersWithCount(5,
-                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(-45), YOffset.fixed(-57))));
+                    HeightRangePlacementModifier.trapezoid(YOffset.fixed(-50), YOffset.fixed(-59))));
 
     public static final RegistryEntry<PlacedFeature> DARK_DIAMOND_ORE_PLACED = PlacedFeatures.register("dark_diamond_ore_placed",
             ModConfiguredFeatures.DARK_DIAMOND_ORE, modifiersWithCount(4,
