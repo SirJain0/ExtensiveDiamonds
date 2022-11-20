@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "extensivediamonds:fused_diamond"
+    },
+    "title": "Power of One",
+    "description": "Obtained a fused diamond!",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "extensivediamonds:textures/block/dark_diamond_ore.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extensivediamonds:fused_diamond"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
