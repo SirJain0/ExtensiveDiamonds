@@ -24,3 +24,5 @@ Do you have any trouble, or do you want to leave some feedback? Join my Discord 
 https://discord.gg/wM4CKTbFVN
 
 **Download on Curseforge: https://www.curseforge.com/minecraft/mc-mods/extensive-diamonds**
+
+![ED_gallery](https://user-images.githubusercontent.com/94301223/204176511-7d787218-d988-448d-b571-738e3f27ad97.png)
