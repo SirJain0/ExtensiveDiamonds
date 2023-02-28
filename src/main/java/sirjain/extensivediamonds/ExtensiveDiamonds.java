@@ -16,7 +16,6 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
 	private static final String messageNameInitialize = "Hello, Extensive Diamonds!";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final ItemGroup EXTENSIVEDIAMONDS_ITEM_GROUP = ItemGroup.create(ItemGroup.Row.TOP, 5).build();
 
 	@Override
 	public void onInitialize() {

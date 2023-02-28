@@ -161,6 +161,6 @@ public class RegisterItems {
 
 
     public static void addItemToTab(Item item) {
-        ItemGroupEvents.modifyEntriesEvent(ExtensiveDiamonds.EXTENSIVEDIAMONDS_ITEM_GROUP).register(entries -> entries.add(item));
+        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.EXTENSIVEDIAMONDS_ITEM_GROUP).register(entries -> entries.add(item));
     }
 }
