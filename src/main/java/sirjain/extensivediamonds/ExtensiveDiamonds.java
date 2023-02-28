@@ -1,10 +1,7 @@
 package sirjain.extensivediamonds;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
@@ -19,18 +16,21 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
 	private static final String messageNameInitialize = "Hello, Extensive Diamonds!";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final ItemGroup EXTENSIVEDIAMONDS_ITEM_GROUP = FabricItemGroupBuilder.build(new Identifier(MOD_ID, MOD_ID), () -> new ItemStack(RegisterItems.FUSED_DIAMOND));
+	public static final ItemGroup EXTENSIVEDIAMONDS_ITEM_GROUP = ItemGroup.create(ItemGroup.Row.TOP, 5).build();
 
 	@Override
 	public void onInitialize() {
 		System.out.println(messageNameInitialize);
 
-		RegisterBlocks.registerOres();
-		RegisterBlocks.registerOreBlocks();
 		RegisterItems.registerDiamonds();
 		RegisterItems.registerCombat();
 		RegisterItems.registerArmorSprites();
+		RegisterItems.addItemsToTabs();
+
+		RegisterBlocks.registerOres();
+		RegisterBlocks.registerOreBlocks();
 		RegisterBlocks.registerGemCharger();
+		RegisterBlocks.addItemsToTabs();
 
 		ModConfiguredFeatures.registerConfiguredFeatures();
 		ModOreGeneration.generateOres();

@@ -1,5 +1,6 @@
 package sirjain.extensivediamonds.world.feature;
 
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
