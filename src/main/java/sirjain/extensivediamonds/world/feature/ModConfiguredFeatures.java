@@ -1,7 +1,12 @@
 package sirjain.extensivediamonds.world.feature;
 
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.registry.Registerable;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.structure.rule.RuleTest;
+import net.minecraft.structure.rule.TagMatchRuleTest;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
 import sirjain.extensivediamonds.registry.RegisterBlocks;
@@ -9,28 +14,43 @@ import sirjain.extensivediamonds.registry.RegisterBlocks;
 import java.util.List;
 
 public class ModConfiguredFeatures {
-    public static final List<OreFeatureConfig.Target> OVERWORLD_RED_DIAMOND_ORES = List.of(
-            OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, RegisterBlocks.RED_DIAMOND_ORE.getDefaultState()),
-            OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, RegisterBlocks.DEEPSLATE_RED_DIAMOND_ORE.getDefaultState()));
+    public static final RegistryKey<ConfiguredFeature<?,?>> RED_DIAMOND_ORE_KEY = registerKey("red_diamond_ore");
+    public static final RegistryKey<ConfiguredFeature<?,?>> GREEN_DIAMOND_ORE_KEY = registerKey("green_diamond_ore");
+    public static final RegistryKey<ConfiguredFeature<?,?>> DARK_DIAMOND_ORE_KEY = registerKey("dark_diamond_ore");
 
-    public static final List<OreFeatureConfig.Target> OVERWORLD_GREEN_DIAMOND_ORES = List.of(
-            OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, RegisterBlocks.GREEN_DIAMOND_ORE.getDefaultState()),
-            OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, RegisterBlocks.DEEPSLATE_GREEN_DIAMOND_ORE.getDefaultState()));
+    public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
+        RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
-    public static final List<OreFeatureConfig.Target> OVERWORLD_DARK_DIAMOND_ORES = List.of(
-            OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, RegisterBlocks.DARK_DIAMOND_ORE.getDefaultState()),
-            OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, RegisterBlocks.DEEPSLATE_DARK_DIAMOND_ORE.getDefaultState()));
+        List<OreFeatureConfig.Target> redDiamondOres =
+                List.of(OreFeatureConfig.createTarget(stoneReplaceables, RegisterBlocks.RED_DIAMOND_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(deepslateReplaceables, RegisterBlocks.DEEPSLATE_RED_DIAMOND_ORE.getDefaultState())
+                );
 
-    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> RED_DIAMOND_ORE =
-            ConfiguredFeatures.register("red_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_RED_DIAMOND_ORES, 3));
+        List<OreFeatureConfig.Target> greenDiamondOres =
+                List.of(OreFeatureConfig.createTarget(stoneReplaceables, RegisterBlocks.GREEN_DIAMOND_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(deepslateReplaceables, RegisterBlocks.DEEPSLATE_GREEN_DIAMOND_ORE.getDefaultState())
+                );
 
-    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> GREEN_DIAMOND_ORE =
-            ConfiguredFeatures.register("green_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_GREEN_DIAMOND_ORES, 3));
+        List<OreFeatureConfig.Target> darkDiamondOres =
+                List.of(OreFeatureConfig.createTarget(stoneReplaceables, RegisterBlocks.DARK_DIAMOND_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(deepslateReplaceables, RegisterBlocks.DEEPSLATE_DARK_DIAMOND_ORE.getDefaultState())
+                );
 
-    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> DARK_DIAMOND_ORE =
-            ConfiguredFeatures.register("dark_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_DARK_DIAMOND_ORES, 3));
+        register(context, RED_DIAMOND_ORE_KEY, new OreFeatureConfig(redDiamondOres, 12));
+        register(context, GREEN_DIAMOND_ORE_KEY, new OreFeatureConfig(greenDiamondOres, 12));
+        register(context, DARK_DIAMOND_ORE_KEY, new OreFeatureConfig(darkDiamondOres, 12));
+    }
 
-    public static void registerConfiguredFeatures() {
-        ExtensiveDiamonds.LOGGER.debug("Registering the ModConfiguredFeatures for " + ExtensiveDiamonds.MOD_ID);
+    public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(ExtensiveDiamonds.MOD_ID, name));
+    }
+
+    private static <FC extends FeatureConfig, F extends Feature<FC>> void register(
+            Registerable<ConfiguredFeature<?,?>> context,
+            RegistryKey<ConfiguredFeature<?,?>> key,
+            FC configuration
+    ) {
+        context.register(key, new ConfiguredFeature<>((F) Feature.ORE, configuration));
     }
 }

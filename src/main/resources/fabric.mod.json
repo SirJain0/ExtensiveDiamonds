@@ -23,6 +23,9 @@
     ],
     "client": [
       "sirjain.extensivediamonds.ExtensiveDiamondsClient"
+    ],
+    "fabric-datagen":  [
+      "sirjain.extensivediamonds.world.gen.ModDataGeneration"
     ]
   },
   "depends": {

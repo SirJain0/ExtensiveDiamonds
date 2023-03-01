@@ -8,12 +8,12 @@ import sirjain.extensivediamonds.world.feature.ModPlacedFeatures;
 public class ModOreGeneration {
     public static void generateOres() {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.RED_DIAMOND_ORE_PLACED.getKey().get());
+                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.RED_DIAMOND_ORE_PLACED_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.GREEN_DIAMOND_ORE_PLACED.getKey().get());
+                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.GREEN_DIAMOND_ORE_PLACED_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.DARK_DIAMOND_ORE_PLACED.getKey().get());
+                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.DARK_DIAMOND_ORE_PLACED_KEY);
     }
 }
