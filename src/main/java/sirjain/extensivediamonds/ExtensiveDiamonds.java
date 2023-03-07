@@ -1,7 +1,6 @@
 package sirjain.extensivediamonds;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.item.ItemGroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
@@ -9,8 +8,6 @@ import sirjain.extensivediamonds.painting.ModPaintings;
 import sirjain.extensivediamonds.registry.RegisterBlocks;
 import sirjain.extensivediamonds.registry.RegisterItems;
 import sirjain.extensivediamonds.screen.ModScreenHandlers;
-import sirjain.extensivediamonds.world.feature.ModConfiguredFeatures;
-import sirjain.extensivediamonds.world.gen.ModOreGeneration;
 
 public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
@@ -31,8 +28,6 @@ public class ExtensiveDiamonds implements ModInitializer {
 		RegisterBlocks.registerGemCharger();
 		RegisterBlocks.addItemsToTabs();
 
-		ModConfiguredFeatures.registerConfiguredFeatures();
-		ModOreGeneration.generateOres();
 		ModPaintings.registerPaintings();
 
 		ModBlockEntities.registerBlockEntities();
