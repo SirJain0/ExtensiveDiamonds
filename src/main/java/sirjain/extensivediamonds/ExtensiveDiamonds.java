@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
 import sirjain.extensivediamonds.painting.ModPaintings;
+import sirjain.extensivediamonds.registry.ModItemGroup;
 import sirjain.extensivediamonds.registry.RegisterBlocks;
 import sirjain.extensivediamonds.registry.RegisterItems;
 import sirjain.extensivediamonds.screen.ModScreenHandlers;
@@ -17,6 +18,8 @@ public class ExtensiveDiamonds implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		System.out.println(messageNameInitialize);
+
+		ModItemGroup.registerItemGroup();
 
 		RegisterItems.registerDiamonds();
 		RegisterItems.registerCombat();
