@@ -2,6 +2,7 @@ package sirjain.extensivediamonds.registry;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -118,25 +119,25 @@ public class RegisterItems {
         FUSED_DIAMOND_HELMET = Registry.register(
                 Registries.ITEM,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_helmet"),
-                new FusedDiamondArmor(FusedDiamondArmorMaterial.material, EquipmentSlot.HEAD, new Item.Settings().rarity(Rarity.UNCOMMON))
+                new FusedDiamondArmor(FusedDiamondArmorMaterial.material, ArmorItem.Type.HELMET, new Item.Settings().rarity(Rarity.UNCOMMON))
         );
 
         FUSED_DIAMOND_CHEST = Registry.register(
                 Registries.ITEM,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_chestplate"),
-                new FusedDiamondArmor(FusedDiamondArmorMaterial.material, EquipmentSlot.CHEST, new Item.Settings().rarity(Rarity.UNCOMMON))
+                new FusedDiamondArmor(FusedDiamondArmorMaterial.material, ArmorItem.Type.CHESTPLATE, new Item.Settings().rarity(Rarity.UNCOMMON))
         );
 
         FUSED_DIAMOND_LEGS = Registry.register(
                 Registries.ITEM,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_leggings"),
-                new FusedDiamondArmor(FusedDiamondArmorMaterial.material, EquipmentSlot.LEGS, new Item.Settings().rarity(Rarity.UNCOMMON))
+                new FusedDiamondArmor(FusedDiamondArmorMaterial.material, ArmorItem.Type.LEGGINGS, new Item.Settings().rarity(Rarity.UNCOMMON))
         );
 
         FUSED_DIAMOND_BOOTS = Registry.register(
                 Registries.ITEM,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_boots"),
-                new FusedDiamondArmor(FusedDiamondArmorMaterial.material, EquipmentSlot.FEET, new Item.Settings().rarity(Rarity.UNCOMMON))
+                new FusedDiamondArmor(FusedDiamondArmorMaterial.material, ArmorItem.Type.BOOTS, new Item.Settings().rarity(Rarity.UNCOMMON))
         );
     }
 
