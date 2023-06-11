@@ -42,7 +42,7 @@ public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvi
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getPlayerLookDirection().getOpposite());
+        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
     @Override
@@ -59,8 +59,6 @@ public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvi
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
-
-    /* BLOCK ENTITY */
 
     @Override
     public BlockRenderType getRenderType(BlockState state) {
@@ -81,13 +79,10 @@ public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvi
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
-            if (screenHandlerFactory != null) {
-                player.openHandledScreen(screenHandlerFactory);
-            }
-        }
-
+        NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
+        if (world.isClient || screenHandlerFactory == null) return ActionResult.PASS;
+        player.openHandledScreen(screenHandlerFactory);
+        
         return ActionResult.SUCCESS;
     }
 
