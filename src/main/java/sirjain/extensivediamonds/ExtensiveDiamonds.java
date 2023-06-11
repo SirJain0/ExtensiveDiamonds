@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
+import sirjain.extensivediamonds.data.ModLootTableModifier;
 import sirjain.extensivediamonds.data.ModOreGeneration;
 import sirjain.extensivediamonds.data.ModOrePlacement;
 import sirjain.extensivediamonds.painting.ModPaintings;
@@ -27,17 +28,15 @@ public class ExtensiveDiamonds implements ModInitializer {
 		RegisterItems.registerCombat();
 		RegisterItems.registerArmorSprites();
 		RegisterItems.addItemsToTabs();
-
 		RegisterBlocks.registerOres();
 		RegisterBlocks.registerOreBlocks();
 		RegisterBlocks.registerGemCharger();
 		RegisterBlocks.addItemsToTabs();
 
 		ModOreGeneration.registerOres();
-
 		ModPaintings.registerPaintings();
-
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
+		ModLootTableModifier.registerLootTableModifiers();
 	}
 }
