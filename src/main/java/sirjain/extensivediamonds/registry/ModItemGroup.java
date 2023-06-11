@@ -12,7 +12,7 @@ public class ModItemGroup {
 
     public static void registerItemGroup() {
         EXTENSIVEDIAMONDS_ITEM_GROUP = FabricItemGroup.builder(new Identifier(ExtensiveDiamonds.MOD_ID, "extensivediamonds_item_group"))
-                .displayName(Text.literal("Extensive Diamonds"))
+                .displayName(Text.translatable("itemGroup.extensivediamonds.extensivediamonds"))
                 .icon(() -> new ItemStack(RegisterItems.FUSED_DIAMOND)).build();
     }
 }
