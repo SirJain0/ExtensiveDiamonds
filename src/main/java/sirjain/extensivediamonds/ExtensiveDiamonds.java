@@ -22,13 +22,16 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public void onInitialize() {
 		System.out.println(messageNameInitialize);
 
+		ModItemGroup.registerItemGroup();
+
 		RegisterItems.registerDiamonds();
 		RegisterItems.registerCombat();
 		RegisterItems.registerArmorSprites();
-
+		RegisterItems.addItemsToTabs();
 		RegisterBlocks.registerOres();
 		RegisterBlocks.registerOreBlocks();
 		RegisterBlocks.registerGemCharger();
+		RegisterBlocks.addItemsToTabs();
 
 		ModOreGeneration.registerOres();
 		ModPaintings.registerPaintings();
