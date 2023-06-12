@@ -26,9 +26,9 @@ public class GemChargerScreenHandler extends ScreenHandler {
         this.propertyDelegate = delegate;
 
         this.addSlot(new Slot(inventory, 0, 20, 20));
-        this.addSlot(new Slot(inventory, 1, 44, 36));
-        this.addSlot(new Slot(inventory, 2, 20, 51));
-        this.addSlot(new Slot(inventory, 3, 141, 36));
+        this.addSlot(new Slot(inventory, 1, 42, 20));
+        this.addSlot(new Slot(inventory, 2, 64, 20));
+        this.addSlot(new Slot(inventory, 3, 141, 48));
 
         addPlayerInventory(playerInv);
         addPlayerHotbar(playerInv);
