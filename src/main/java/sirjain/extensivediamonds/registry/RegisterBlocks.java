@@ -4,11 +4,10 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.ExperienceDroppingBlock;
-import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -47,7 +46,7 @@ public class RegisterBlocks {
         RED_DIAMOND_ORE = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond_ore"),
-                new ExperienceDroppingBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+                new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
         );
 
         BLOCK_RED_DIAMOND_ORE = Registry.register(
@@ -59,7 +58,7 @@ public class RegisterBlocks {
         GREEN_DIAMOND_ORE = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond_ore"),
-                new ExperienceDroppingBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+                new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
         );
 
         BLOCK_GREEN_DIAMOND_ORE = Registry.register(
@@ -71,7 +70,7 @@ public class RegisterBlocks {
         DARK_DIAMOND_ORE = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_ore"),
-                new ExperienceDroppingBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+                new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
         );
 
         BLOCK_DARK_DIAMOND_ORE = Registry.register(
@@ -83,7 +82,7 @@ public class RegisterBlocks {
         DEEPSLATE_RED_DIAMOND_ORE = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "deepslate_red_diamond_ore"),
-                new ExperienceDroppingBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+                new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
         );
 
         BLOCK_DEEPSLATE_RED_DIAMOND_ORE = Registry.register(
@@ -95,7 +94,7 @@ public class RegisterBlocks {
         DEEPSLATE_GREEN_DIAMOND_ORE = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "deepslate_green_diamond_ore"),
-                new ExperienceDroppingBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+                new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
         );
 
         BLOCK_DEEPSLATE_GREEN_DIAMOND_ORE = Registry.register(
@@ -107,7 +106,7 @@ public class RegisterBlocks {
         DEEPSLATE_DARK_DIAMOND_ORE = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "deepslate_dark_diamond_ore"),
-                new ExperienceDroppingBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
+                new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(0, 2))
         );
 
         BLOCK_DEEPSLATE_DARK_DIAMOND_ORE = Registry.register(
@@ -121,7 +120,7 @@ public class RegisterBlocks {
         BLOCK_OF_GREEN_DIAMOND = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_green_diamond"),
-                new BlockOfGreenDiamond(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f))
+                new BlockOfGreenDiamond(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).requiresTool().strength(3.0f, 3.0f))
         );
 
         BLOCK_OF_GREEN_DIAMOND_BLOCK = Registry.register(
@@ -133,7 +132,7 @@ public class RegisterBlocks {
         BLOCK_OF_RED_DIAMOND = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_red_diamond"),
-                new BlockOfRedDiamond(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f))
+                new BlockOfRedDiamond(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).requiresTool().strength(3.0f, 3.0f))
         );
 
         BLOCK_OF_RED_DIAMOND_BLOCK = Registry.register(
@@ -145,7 +144,7 @@ public class RegisterBlocks {
         BLOCK_OF_DARK_DIAMOND = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "block_of_dark_diamond"),
-                new BlockOfDarkDiamond(AbstractBlock.Settings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f))
+                new BlockOfDarkDiamond(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).requiresTool().strength(3.0f, 3.0f))
         );
 
         BLOCK_OF_DARK_DIAMOND_BLOCK = Registry.register(
@@ -159,7 +158,7 @@ public class RegisterBlocks {
         GEM_CHARGER = Registry.register(
                 Registries.BLOCK,
                 new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
-                new GemChargerBlock(FabricBlockSettings.of(Material.STONE).requiresTool().nonOpaque().strength(3.0f, 3.0f).luminance((state) -> 6))
+                new GemChargerBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE).requiresTool().nonOpaque().strength(3.0f, 3.0f).luminance((state) -> 6))
         );
 
         GEM_CHARGER_ITEM = Registry.register(
@@ -167,22 +166,5 @@ public class RegisterBlocks {
                 new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
                 new BlockItem(GEM_CHARGER, new Item.Settings())
         );
-    }
-
-    public static void addItemsToTabs() {
-        addItemToTab(BLOCK_RED_DIAMOND_ORE);
-        addItemToTab(BLOCK_GREEN_DIAMOND_ORE);
-        addItemToTab(BLOCK_DARK_DIAMOND_ORE);
-        addItemToTab(BLOCK_DEEPSLATE_RED_DIAMOND_ORE);
-        addItemToTab(BLOCK_DEEPSLATE_GREEN_DIAMOND_ORE);
-        addItemToTab(BLOCK_DEEPSLATE_DARK_DIAMOND_ORE);
-        addItemToTab(BLOCK_OF_GREEN_DIAMOND_BLOCK);
-        addItemToTab(BLOCK_OF_DARK_DIAMOND_BLOCK);
-        addItemToTab(BLOCK_OF_RED_DIAMOND_BLOCK);
-        addItemToTab(GEM_CHARGER_ITEM);
-    }
-
-    public static void addItemToTab(Item item) {
-        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.EXTENSIVEDIAMONDS_ITEM_GROUP).register(entries -> entries.add(item));
     }
 }

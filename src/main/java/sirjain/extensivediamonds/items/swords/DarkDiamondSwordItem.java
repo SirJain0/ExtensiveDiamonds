@@ -15,8 +15,8 @@ public class DarkDiamondSwordItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 70, 2), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 120, 1), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 3*20, 1), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 6*20, 0), attacker);
         return super.postHit(stack, target, attacker);
     }
 }

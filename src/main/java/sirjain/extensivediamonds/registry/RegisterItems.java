@@ -140,28 +140,4 @@ public class RegisterItems {
                 new FusedDiamondArmor(FusedDiamondArmorMaterial.material, ArmorItem.Type.BOOTS, new Item.Settings().rarity(Rarity.UNCOMMON))
         );
     }
-
-    public static void addItemsToTabs() {
-        addItemToTab(RED_DIAMOND);
-        addItemToTab(GREEN_DIAMOND);
-        addItemToTab(DARK_DIAMOND);
-        addItemToTab(FUSED_DIAMOND);
-        addItemToTab(RED_DIAMOND_SWORD);
-        addItemToTab(GREEN_DIAMOND_SWORD);
-        addItemToTab(DARK_DIAMOND_SWORD);
-        addItemToTab(FUSED_DIAMOND_SWORD);
-        addItemToTab(FUSED_DIAMOND_AXE);
-        addItemToTab(FUSED_DIAMOND_SHOVEL);
-        addItemToTab(FUSED_DIAMOND_HOE);
-        addItemToTab(FUSED_DIAMOND_PICKAXE);
-        addItemToTab(FUSED_DIAMOND_HELMET);
-        addItemToTab(FUSED_DIAMOND_CHEST);
-        addItemToTab(FUSED_DIAMOND_LEGS);
-        addItemToTab(FUSED_DIAMOND_BOOTS);
-    }
-
-
-    public static void addItemToTab(Item item) {
-        ItemGroupEvents.modifyEntriesEvent(ModItemGroup.EXTENSIVEDIAMONDS_ITEM_GROUP).register(entries -> entries.add(item));
-    }
 }
