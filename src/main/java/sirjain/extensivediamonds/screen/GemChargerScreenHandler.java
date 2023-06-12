@@ -43,7 +43,7 @@ public class GemChargerScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);
-        int progressArrowSize = 79;
+        int progressArrowSize = 124;
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
