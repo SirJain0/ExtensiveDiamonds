@@ -50,9 +50,9 @@ public class FusedDiamondArmor extends ArmorItem {
         ArmorItem legs = (ArmorItem)player.getInventory().getArmorStack(2).getItem();
         ArmorItem boots = (ArmorItem)player.getInventory().getArmorStack(3).getItem();
 
-        return chest.getMaterial() == FusedDiamondArmorMaterial.material &&
-                head.getMaterial() == FusedDiamondArmorMaterial.material &&
-                legs.getMaterial() == FusedDiamondArmorMaterial.material &&
-                boots.getMaterial() == FusedDiamondArmorMaterial.material;
+        return chest.getMaterial() == FusedDiamondArmorMaterial.MATERIAL &&
+                head.getMaterial() == FusedDiamondArmorMaterial.MATERIAL &&
+                legs.getMaterial() == FusedDiamondArmorMaterial.MATERIAL &&
+                boots.getMaterial() == FusedDiamondArmorMaterial.MATERIAL;
     }
 }
