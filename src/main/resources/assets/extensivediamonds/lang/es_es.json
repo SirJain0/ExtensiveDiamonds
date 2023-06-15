@@ -1,0 +1,83 @@
+{
+    "Extensive Diamonds": {
+        "itemGroup.extensivediamonds.extensivediamonds": "Diamantes Extensos"
+    },
+    "Green Diamond": {
+        "item.extensivediamonds.green_diamond": "Diamante Verde"
+    },
+    "Fused Diamond": {
+        "item.extensivediamonds.fused_diamond": "Diamante Fusionado"
+    },
+    "Dark Diamond": {
+        "item.extensivediamonds.dark_diamond": "Diamante Oscuro"
+    },
+    "Red Diamond Sword": {
+        "item.extensivediamonds.red_diamond_sword": "Espada De Diamante Rojo"
+    },
+    "Green Diamond Sword": {
+        "item.extensivediamonds.green_diamond_sword": "Espada De Diamante Verde"
+    },
+    "Dark Diamond Sword": {
+        "item.extensivediamonds.dark_diamond_sword": "Espada De Diamante Oscura"
+    },
+    "Fused Diamond Sword": {
+        "item.extensivediamonds.fused_diamond_sword": "Espada de Diamante Fusionado"
+    },
+    "Dark Diamond Ore": {
+        "block.extensivediamonds.dark_diamond_ore": "Mineral De Diamante Fusionado"
+    },
+    "Green Diamond Ore": {
+        "block.extensivediamonds.green_diamond_ore": "Mineral De Diamante Verde"
+    },
+    "Red Diamond Ore": {
+        "block.extensivediamonds.red_diamond_ore": "Mineral De Diamante Rojo"
+    },
+    "Deepslate Dark Diamond Ore": {
+        "block.extensivediamonds.deepslate_dark_diamond_ore": "Mineral De Diamante Oscuro De Pizarra Abismal"
+    },
+    "Deepslate Green Diamond Ore": {
+        "block.extensivediamonds.deepslate_green_diamond_ore": "Mineral De Diamante Verde De Pizarra Abismal"
+    },
+    "Deepslate Red Diamond Ore": {
+        "block.extensivediamonds.deepslate_red_diamond_ore": "Mineral De Diamante Rojo De Pizarra Abismal"
+    },
+    "Block of Green Diamond": {
+        "block.extensivediamonds.block_of_green_diamond": "Bloque De Diamante Verde"
+    },
+    "Block of Red Diamond\n": {
+        "block.extensivediamonds.block_of_red_diamond": "Bloque De Diamante Rojo"
+    },
+    "Block of Dark Diamond\n": {
+        "block.extensivediamonds.block_of_dark_diamond": "Bloque De Diamante Oscuro"
+    },
+    "Gem Charger\n": {
+        "block.extensivediamonds.gem_charger": "Cargador De Gemas"
+    },
+    "Fused Diamond Pickaxe": {
+        "item.extensivediamonds.fused_diamond_pickaxe": "Pico De Diamante Fusionado "
+    },
+    "Fused Diamond Axe": {
+        "item.extensivediamonds.fused_diamond_axe": "Hacha De Diamante Fusionado"
+    },
+    "Fused Diamond Hoe": {
+        "item.extensivediamonds.fused_diamond_hoe": "Azada De Diamante Fusionado"
+    },
+    "Fused Diamond Shovel": {
+        "item.extensivediamonds.fused_diamond_shovel": "Pala De Diamante Fusionado"
+    },
+    "Fused Diamond Helmet": {
+        "item.extensivediamonds.fused_diamond_helmet": "Casco De Diamante Fusionado"
+    },
+    "Fused Diamond Chestplate": {
+        "item.extensivediamonds.fused_diamond_chestplate": "Coraza De Diamante Fusionado"
+    },
+    "Fused Diamond Leggings": {
+        "item.extensivediamonds.fused_diamond_leggings": "Mallas De Diamante Fusionado"
+    },
+    "Fused Diamond Boots": {
+        "item.extensivediamonds.fused_diamond_boots": "Botas De Diamante Fusionado"
+    },
+    "Red Diamond": {
+        "item.extensivediamonds.red_diamond": "Diamante Rojo"
+    }
+}
