@@ -1,8 +1,6 @@
 {
-    "itemGroup.extensivediamonds.extensivediamonds\n": "Diamantes Extensos",
-    "Green Diamond": {
-        "item.extensivediamonds.green_diamond": "Diamante Verde"
-    },
+    "itemGroup.extensivediamonds.extensivediamonds": "Diamantes Extensos",
+    "item.extensivediamonds.green_diamond": "Diamante Verde",
     "Fused Diamond": {
         "item.extensivediamonds.fused_diamond": "Diamante Fusionado"
     },
