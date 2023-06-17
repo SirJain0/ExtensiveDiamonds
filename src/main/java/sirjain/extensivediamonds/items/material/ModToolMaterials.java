@@ -8,13 +8,13 @@ import sirjain.extensivediamonds.registry.RegisterItems;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    RED_DIAMOND(3, 1422, 8.0F, 0.0F, 30, () -> Ingredient.ofItems(RegisterItems.RED_DIAMOND)),
+    RED_DIAMOND(3, 1422, 1.0F, 0.0F, 30, () -> Ingredient.ofItems(RegisterItems.RED_DIAMOND)),
 
-    GREEN_DIAMOND(3, 1149, 7.0F, 0.0F, 16, () -> Ingredient.ofItems(RegisterItems.GREEN_DIAMOND)),
+    GREEN_DIAMOND(3, 1149, 1.0F, 0.0F, 16, () -> Ingredient.ofItems(RegisterItems.GREEN_DIAMOND)),
 
-    DARK_DIAMOND(4, 1729, 9.0F, 0.0F, 18, () -> Ingredient.ofItems(RegisterItems.DARK_DIAMOND)),
+    DARK_DIAMOND(4, 1729, 1.0F, 0.0F, 18, () -> Ingredient.ofItems(RegisterItems.DARK_DIAMOND)),
 
-    FUSED_DIAMOND(5, 1729, 9.0F, 0.0F, 22, () -> Ingredient.ofItems(RegisterItems.FUSED_DIAMOND));
+    FUSED_DIAMOND(5, 1729, 1.3F, 0.0F, 22, () -> Ingredient.ofItems(RegisterItems.FUSED_DIAMOND));
 
     private final int miningLevel;
     private final int itemDurability;
