@@ -4,7 +4,7 @@
 
 ## General Info
 
-Welcome to Extensive Diamonds - a seamless mod which is a great small addition to Vanilla Minecraft!
+Extensive Diamonds is a seamless mod which is a great small addition to Vanilla Minecraft!
 
 This mod adds four new diamond types - red, green, dark, and fused - that all help players with their daily tasks, whether it be PvP or defeating Vanilla mobs. Every diamond can be used to craft new weapons, and some can be used to craft other items, like gear.
 
@@ -22,6 +22,10 @@ The fused diamond is a special diamond that cannot be obtained in regular surviv
 
 To get a fused diamond, you need to fuse a red, green, and dark diamond. To do this, craft a gem charger (see image section to know how to do so) and input one of each diamond into the slots. Ta da! You have yourself a fused diamond. Happy surviving!
 
-Note: This mod only works with Fabric API and not Forge.
+**Note**: This mod only works with Fabric API and not Forge.
 
-Mod link: https://www.curseforge.com/minecraft/mc-mods/extensive-diamonds
+## Links
+
+Mod link: https://www.curseforge.com/minecraft/mc-mods/extensive-diamonds <br>
+Translations: https://poeditor.com/join/project/fCwa0aMYzo <br>
+Discord server: https://discord.gg/wM4CKTbFVN
