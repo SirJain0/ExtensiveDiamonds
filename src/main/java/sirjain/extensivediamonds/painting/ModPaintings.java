@@ -7,14 +7,14 @@ import net.minecraft.util.Identifier;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
 
 public class ModPaintings {
-    public static final PaintingVariant GEMS = registerPainting("gems", new PaintingVariant(32, 16));
-    public static final PaintingVariant GEMS_LOGO = registerPainting("gems_logo", new PaintingVariant(16, 16));
+	public static final PaintingVariant GEMS = registerPainting("gems", new PaintingVariant(32, 16));
+	public static final PaintingVariant GEMS_LOGO = registerPainting("gems_logo", new PaintingVariant(16, 16));
 
-    private static PaintingVariant registerPainting(String name, PaintingVariant paintingVariant) {
-        return Registry.register(Registries.PAINTING_VARIANT, new Identifier(ExtensiveDiamonds.MOD_ID, name), paintingVariant);
-    }
+	private static PaintingVariant registerPainting(String name, PaintingVariant paintingVariant) {
+		return Registry.register(Registries.PAINTING_VARIANT, new Identifier(ExtensiveDiamonds.MOD_ID, name), paintingVariant);
+	}
 
-    public static void registerPaintings() {
-        ExtensiveDiamonds.LOGGER.debug("Registering paintings for Extensive Diamonds!");
-    }
+	public static void registerPaintings() {
+		ExtensiveDiamonds.LOGGER.debug("Registering paintings for Extensive Diamonds!");
+	}
 }

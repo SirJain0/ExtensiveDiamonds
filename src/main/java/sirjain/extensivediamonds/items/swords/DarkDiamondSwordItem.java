@@ -9,15 +9,15 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 
 public class DarkDiamondSwordItem extends SwordItem {
-    public DarkDiamondSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Item.Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
-    }
+	public DarkDiamondSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Item.Settings settings) {
+		super(toolMaterial, attackDamage, attackSpeed, settings);
+	}
 
-    @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 3*20, 1), attacker);
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 6*20, 0), attacker);
-        return super.postHit(stack, target, attacker);
-    }
+	@Override
+	public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+		target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 3 * 20, 1), attacker);
+		target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 6 * 20, 0), attacker);
+		return super.postHit(stack, target, attacker);
+	}
 }
 

@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
 import sirjain.extensivediamonds.data.ModLootTableModifier;
 import sirjain.extensivediamonds.data.ModOreGeneration;
-import sirjain.extensivediamonds.data.ModOrePlacement;
 import sirjain.extensivediamonds.painting.ModPaintings;
 import sirjain.extensivediamonds.registry.ModItemGroup;
 import sirjain.extensivediamonds.registry.RegisterBlocks;
