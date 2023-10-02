@@ -5,6 +5,7 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import sirjain.extensivediamonds.registry.RegisterItems;
 
 public class FusedDiamondArmorMaterial implements ArmorMaterial {
 	public static final FusedDiamondArmorMaterial material = new FusedDiamondArmorMaterial();
@@ -34,8 +35,7 @@ public class FusedDiamondArmorMaterial implements ArmorMaterial {
 
 	@Override
 	public Ingredient getRepairIngredient() {
-		//TODO: Change it to appropriate ingredient
-		return Ingredient.EMPTY;
+		return Ingredient.ofItems(RegisterItems.FUSED_DIAMOND);
 	}
 
 	@Override
