@@ -87,11 +87,11 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState blockState, GemChargerBlockEntity charger) {
-        if(world.isClient()) {
+        if (world.isClient()) {
             return;
         }
 
-        if(hasValidRecipe(charger)) {
+        if (hasValidRecipe(charger)) {
             charger.fuelProgress++;
             markDirty(world, blockPos, blockState);
             if(charger.fuelProgress >= charger.maxProgress) {
@@ -109,7 +109,7 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
             inventory.setStack(i, charger.getStack(i));
         }
 
-        if(hasValidRecipe(charger)) {
+        if (hasValidRecipe(charger)) {
             charger.removeStack(0, 1);
             charger.removeStack(1, 1);
             charger.removeStack(2, 1);
