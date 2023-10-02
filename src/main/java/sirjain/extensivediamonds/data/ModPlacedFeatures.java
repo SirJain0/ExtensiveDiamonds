@@ -25,15 +25,15 @@ public class ModPlacedFeatures {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, RED_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_DIAMOND_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(16,
+                ModOrePlacement.modifiersWithCount(8,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-59), YOffset.fixed(-42))));
 
         register(context, GREEN_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GREEN_DIAMOND_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(16,
+                ModOrePlacement.modifiersWithCount(8,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-60), YOffset.fixed(-45))));
 
         register(context, DARK_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DARK_DIAMOND_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(16,
+                ModOrePlacement.modifiersWithCount(8,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-60), YOffset.fixed(-48))));
     }
 

@@ -37,9 +37,9 @@ public class ModConfiguredFeatures {
             List.of(OreFeatureConfig.createTarget(stoneReplaceables, RegisterBlocks.DARK_DIAMOND_ORE.getDefaultState()),
                     OreFeatureConfig.createTarget(deepslateReplaceables, RegisterBlocks.DEEPSLATE_DARK_DIAMOND_ORE.getDefaultState()));
 
-        register(context, RED_DIAMOND_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRedDiamondOres, 9));
-        register(context, GREEN_DIAMOND_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldGreenDiamondOres, 8));
-        register(context, DARK_DIAMOND_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldDarkDiamondOres, 8));
+        register(context, RED_DIAMOND_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRedDiamondOres, 6));
+        register(context, GREEN_DIAMOND_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldGreenDiamondOres, 5));
+        register(context, DARK_DIAMOND_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldDarkDiamondOres, 4));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
