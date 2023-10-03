@@ -8,6 +8,7 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
@@ -22,7 +23,7 @@ import sirjain.extensivediamonds.items.EDItems;
 import sirjain.extensivediamonds.block.gem_charger.screen.GemChargerScreenHandler;
 
 public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
-	private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
+	private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(5, ItemStack.EMPTY);
 
 	protected final PropertyDelegate delegate;
 	private int fuelProgress = 0;
@@ -59,6 +60,7 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
 
 	@Override
 	public Text getDisplayName() {
+		// TODO: Change to localized string
 		return Text.literal("Gem Charger");
 	}
 
@@ -113,34 +115,38 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
 			charger.removeStack(0, 1);
 			charger.removeStack(1, 1);
 			charger.removeStack(2, 1);
+			charger.removeStack(3, 1);
 
-			charger.setStack(3, new ItemStack(EDItems.FUSED_DIAMOND,
-				charger.getStack(3).getCount() + 1));
+			charger.setStack(4, new ItemStack(EDItems.FUSED_DIAMOND,
+				charger.getStack(4).getCount() + 1));
 
 			charger.resetProgress();
 		}
 	}
 
+	// TODO: Refactor this whole system
 	// Check: Does the player have the right recipe?
 	private static boolean hasValidRecipe(GemChargerBlockEntity charger) {
 		SimpleInventory inventory = new SimpleInventory(charger.size());
+
 		for (int i = 0; i < charger.size(); i++) {
 			inventory.setStack(i, charger.getStack(i));
 		}
 
-		boolean hasGemOne = charger.getStack(0).getItem() == EDItems.RED_DIAMOND || charger.getStack(1).getItem() == EDItems.RED_DIAMOND || charger.getStack(2).getItem() == EDItems.RED_DIAMOND;
-		boolean hasGemTwo = charger.getStack(0).getItem() == EDItems.GREEN_DIAMOND || charger.getStack(1).getItem() == EDItems.GREEN_DIAMOND || charger.getStack(2).getItem() == EDItems.GREEN_DIAMOND;
-		boolean hasGemThree = charger.getStack(0).getItem() == EDItems.DARK_DIAMOND || charger.getStack(1).getItem() == EDItems.DARK_DIAMOND || charger.getStack(2).getItem() == EDItems.DARK_DIAMOND;
+		boolean hasRedDiamond = charger.getStack(0).getItem() == EDItems.RED_DIAMOND || charger.getStack(1).getItem() == EDItems.RED_DIAMOND || charger.getStack(2).getItem() == EDItems.RED_DIAMOND || charger.getStack(3).getItem() == Items.DIAMOND;
+		boolean hasGreenDiamond = charger.getStack(0).getItem() == EDItems.GREEN_DIAMOND || charger.getStack(1).getItem() == EDItems.GREEN_DIAMOND || charger.getStack(2).getItem() == EDItems.GREEN_DIAMOND || charger.getStack(3).getItem() == Items.DIAMOND;
+		boolean hasDarkDiamond = charger.getStack(0).getItem() == EDItems.DARK_DIAMOND || charger.getStack(1).getItem() == EDItems.DARK_DIAMOND || charger.getStack(2).getItem() == EDItems.DARK_DIAMOND || charger.getStack(3).getItem() == Items.DIAMOND;
+		boolean hasVanillaDiamond = charger.getStack(0).getItem() == Items.DIAMOND || charger.getStack(1).getItem() == Items.DIAMOND || charger.getStack(2).getItem() == Items.DIAMOND || charger.getStack(3).getItem() == Items.DIAMOND;
+		boolean hasAllGems = hasRedDiamond && hasGreenDiamond && hasDarkDiamond && hasVanillaDiamond;
 
-		return hasGemOne && hasGemTwo && hasGemThree && canInsertAmountIntoOutputSlot(inventory)
-			&& canInsertItemIntoOutputSlot(inventory, EDItems.FUSED_DIAMOND);
+		return hasAllGems && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, EDItems.FUSED_DIAMOND);
 	}
 
 	private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-		return inventory.getStack(3).getItem() == output || inventory.getStack(3).isEmpty();
+		return inventory.getStack(4).getItem() == output || inventory.getStack(4).isEmpty();
 	}
 
 	private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-		return inventory.getStack(3).getMaxCount() > inventory.getStack(3).getCount();
+		return inventory.getStack(4).getMaxCount() > inventory.getStack(4).getCount();
 	}
 }

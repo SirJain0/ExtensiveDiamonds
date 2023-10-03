@@ -15,7 +15,7 @@ public class GemChargerScreenHandler extends ScreenHandler {
 	private final PropertyDelegate propertyDelegate;
 
 	public GemChargerScreenHandler(int syncId, PlayerInventory playerInventory) {
-		this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(2));
+		this(syncId, playerInventory, new SimpleInventory(5), new ArrayPropertyDelegate(2));
 	}
 
 	public GemChargerScreenHandler(int syncId, PlayerInventory playerInv, Inventory inventory, PropertyDelegate delegate) {
@@ -28,7 +28,8 @@ public class GemChargerScreenHandler extends ScreenHandler {
 		this.addSlot(new Slot(inventory, 0, 20, 20));
 		this.addSlot(new Slot(inventory, 1, 42, 20));
 		this.addSlot(new Slot(inventory, 2, 64, 20));
-		this.addSlot(new Slot(inventory, 3, 141, 48));
+		this.addSlot(new Slot(inventory, 3, 86, 20));
+		this.addSlot(new Slot(inventory, 4, 141, 48));
 
 		addPlayerInventory(playerInv);
 		addPlayerHotbar(playerInv);
