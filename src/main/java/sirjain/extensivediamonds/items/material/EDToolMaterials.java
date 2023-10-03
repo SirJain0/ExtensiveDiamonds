@@ -3,18 +3,18 @@ package sirjain.extensivediamonds.items.material;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Lazy;
-import sirjain.extensivediamonds.registry.RegisterItems;
+import sirjain.extensivediamonds.items.EDItems;
 
 import java.util.function.Supplier;
 
-public enum ModToolMaterials implements ToolMaterial {
-	RED_DIAMOND(3, 1422, 1.0F, 0.0F, 30, () -> Ingredient.ofItems(RegisterItems.RED_DIAMOND)),
+public enum EDToolMaterials implements ToolMaterial {
+	RED_DIAMOND(3, 1422, 1.0F, 0.0F, 30, () -> Ingredient.ofItems(EDItems.RED_DIAMOND)),
 
-	GREEN_DIAMOND(3, 1149, 1.0F, 0.0F, 16, () -> Ingredient.ofItems(RegisterItems.GREEN_DIAMOND)),
+	GREEN_DIAMOND(3, 1149, 1.0F, 0.0F, 16, () -> Ingredient.ofItems(EDItems.GREEN_DIAMOND)),
 
-	DARK_DIAMOND(4, 1729, 1.0F, 0.0F, 18, () -> Ingredient.ofItems(RegisterItems.DARK_DIAMOND)),
+	DARK_DIAMOND(4, 1729, 1.0F, 0.0F, 18, () -> Ingredient.ofItems(EDItems.DARK_DIAMOND)),
 
-	FUSED_DIAMOND(5, 1729, 1.3F, 0.0F, 22, () -> Ingredient.ofItems(RegisterItems.FUSED_DIAMOND));
+	FUSED_DIAMOND(5, 1729, 1.3F, 0.0F, 22, () -> Ingredient.ofItems(EDItems.FUSED_DIAMOND));
 
 	private final int miningLevel;
 	private final int itemDurability;
@@ -23,7 +23,7 @@ public enum ModToolMaterials implements ToolMaterial {
 	private final int enchantability;
 	private final Lazy<Ingredient> repairIngredient;
 
-	ModToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier repairIngredient) {
+	EDToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier repairIngredient) {
 		this.miningLevel = miningLevel;
 		this.itemDurability = itemDurability;
 		this.miningSpeed = miningSpeed;

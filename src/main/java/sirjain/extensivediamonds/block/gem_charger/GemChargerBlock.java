@@ -18,7 +18,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import sirjain.extensivediamonds.block.gem_charger.entity.GemChargerBlockEntity;
-import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
+import sirjain.extensivediamonds.block.gem_charger.entity.EDBlockEntities;
 
 public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvider {
 	public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
@@ -90,6 +90,6 @@ public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvi
 	@Nullable
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-		return validateTicker(type, ModBlockEntities.GEM_CHARGER, GemChargerBlockEntity::tick);
+		return validateTicker(type, EDBlockEntities.GEM_CHARGER, GemChargerBlockEntity::tick);
 	}
 }

@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.screen;
+package sirjain.extensivediamonds.block.gem_charger.screen;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -19,7 +19,7 @@ public class GemChargerScreenHandler extends ScreenHandler {
 	}
 
 	public GemChargerScreenHandler(int syncId, PlayerInventory playerInv, Inventory inventory, PropertyDelegate delegate) {
-		super(ModScreenHandlers.GEM_CHARGER_SCREEN_HANDLER, syncId);
+		super(EDScreenHandlers.GEM_CHARGER_SCREEN_HANDLER, syncId);
 		checkSize(inventory, 3);
 		this.inventory = inventory;
 		inventory.onOpen(playerInv.player);

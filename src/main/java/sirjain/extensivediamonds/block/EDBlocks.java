@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.registry;
+package sirjain.extensivediamonds.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -16,7 +16,7 @@ import sirjain.extensivediamonds.block.ore_blocks.BlockOfDarkDiamond;
 import sirjain.extensivediamonds.block.ore_blocks.BlockOfGreenDiamond;
 import sirjain.extensivediamonds.block.ore_blocks.BlockOfRedDiamond;
 
-public class RegisterBlocks {
+public class EDBlocks {
 	public static Block RED_DIAMOND_ORE;
 	public static Block GREEN_DIAMOND_ORE;
 	public static Block DARK_DIAMOND_ORE;

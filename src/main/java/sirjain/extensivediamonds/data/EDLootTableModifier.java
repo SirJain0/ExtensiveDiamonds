@@ -11,16 +11,16 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
-import sirjain.extensivediamonds.registry.RegisterItems;
+import sirjain.extensivediamonds.items.EDItems;
 
-public class ModLootTableModifier {
+public class EDLootTableModifier {
 	public static void registerLootTableModifiers() {
 		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-			addItem(LootTables.VILLAGE_DESERT_HOUSE_CHEST, RegisterItems.FUSED_DIAMOND, 0.2f, id, tableBuilder);
-			addItem(LootTables.ANCIENT_CITY_CHEST, RegisterItems.FUSED_DIAMOND, 0.5f, id, tableBuilder);
-			addItem(LootTables.VILLAGE_ARMORER_CHEST, RegisterItems.FUSED_DIAMOND, 0.2f, id, tableBuilder);
-			addItem(LootTables.VILLAGE_BUTCHER_CHEST, RegisterItems.FUSED_DIAMOND, 0.2f, id, tableBuilder);
-			addItem(LootTables.VILLAGE_TEMPLE_CHEST, RegisterItems.FUSED_DIAMOND, 0.2f, id, tableBuilder);
+			addItem(LootTables.VILLAGE_DESERT_HOUSE_CHEST, EDItems.FUSED_DIAMOND, 0.2f, id, tableBuilder);
+			addItem(LootTables.ANCIENT_CITY_CHEST, EDItems.FUSED_DIAMOND, 0.5f, id, tableBuilder);
+			addItem(LootTables.VILLAGE_ARMORER_CHEST, EDItems.FUSED_DIAMOND, 0.2f, id, tableBuilder);
+			addItem(LootTables.VILLAGE_BUTCHER_CHEST, EDItems.FUSED_DIAMOND, 0.2f, id, tableBuilder);
+			addItem(LootTables.VILLAGE_TEMPLE_CHEST, EDItems.FUSED_DIAMOND, 0.2f, id, tableBuilder);
 		});
 	}
 

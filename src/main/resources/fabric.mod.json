@@ -25,7 +25,7 @@
       "sirjain.extensivediamonds.ExtensiveDiamondsClient"
     ],
     "fabric-datagen": [
-      "sirjain.extensivediamonds.data.ModDataGeneration"
+      "sirjain.extensivediamonds.data.EDOrePlacement.EDDataGeneration"
     ]
   },
   "depends": {

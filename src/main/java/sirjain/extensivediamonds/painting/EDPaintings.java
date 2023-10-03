@@ -6,7 +6,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
 
-public class ModPaintings {
+public class EDPaintings {
 	public static final PaintingVariant GEMS = registerPainting("gems", new PaintingVariant(32, 16));
 	public static final PaintingVariant GEMS_LOGO = registerPainting("gems_logo", new PaintingVariant(16, 16));
 

@@ -6,9 +6,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
-import sirjain.extensivediamonds.registry.RegisterBlocks;
+import sirjain.extensivediamonds.block.EDBlocks;
 
-public class ModBlockEntities {
+public class EDBlockEntities {
 	public static BlockEntityType<GemChargerBlockEntity> GEM_CHARGER;
 
 	public static void registerBlockEntities() {
@@ -16,6 +16,6 @@ public class ModBlockEntities {
 			Registries.BLOCK_ENTITY_TYPE,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
 			FabricBlockEntityTypeBuilder.create(GemChargerBlockEntity::new,
-				RegisterBlocks.GEM_CHARGER).build(null));
+				EDBlocks.GEM_CHARGER).build(null));
 	}
 }

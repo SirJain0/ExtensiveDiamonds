@@ -3,14 +3,14 @@ package sirjain.extensivediamonds;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sirjain.extensivediamonds.block.gem_charger.entity.ModBlockEntities;
-import sirjain.extensivediamonds.data.ModLootTableModifier;
-import sirjain.extensivediamonds.data.ModOreGeneration;
-import sirjain.extensivediamonds.painting.ModPaintings;
-import sirjain.extensivediamonds.registry.ModItemGroup;
-import sirjain.extensivediamonds.registry.RegisterBlocks;
-import sirjain.extensivediamonds.registry.RegisterItems;
-import sirjain.extensivediamonds.screen.ModScreenHandlers;
+import sirjain.extensivediamonds.block.gem_charger.entity.EDBlockEntities;
+import sirjain.extensivediamonds.data.EDLootTableModifier;
+import sirjain.extensivediamonds.data.EDOrePlacement.EDOreGeneration;
+import sirjain.extensivediamonds.painting.EDPaintings;
+import sirjain.extensivediamonds.items.EDItemGroup;
+import sirjain.extensivediamonds.block.EDBlocks;
+import sirjain.extensivediamonds.items.EDItems;
+import sirjain.extensivediamonds.block.gem_charger.screen.EDScreenHandlers;
 
 public class ExtensiveDiamonds implements ModInitializer {
 	public static final String MOD_ID = "extensivediamonds";
@@ -21,19 +21,19 @@ public class ExtensiveDiamonds implements ModInitializer {
 	public void onInitialize() {
 		System.out.println(INIT_MESSAGE);
 
-		RegisterItems.registerDiamonds();
-		RegisterItems.registerCombat();
-		RegisterItems.registerArmorSprites();
-		RegisterBlocks.registerOres();
-		RegisterBlocks.registerOreBlocks();
-		RegisterBlocks.registerGemCharger();
+		EDItems.registerDiamonds();
+		EDItems.registerCombat();
+		EDItems.registerArmorSprites();
+		EDBlocks.registerOres();
+		EDBlocks.registerOreBlocks();
+		EDBlocks.registerGemCharger();
 
-		ModOreGeneration.registerOres();
-		ModPaintings.registerPaintings();
-		ModBlockEntities.registerBlockEntities();
-		ModScreenHandlers.registerScreenHandlers();
-		ModLootTableModifier.registerLootTableModifiers();
+		EDOreGeneration.registerOres();
+		EDPaintings.registerPaintings();
+		EDBlockEntities.registerBlockEntities();
+		EDScreenHandlers.registerScreenHandlers();
+		EDLootTableModifier.registerLootTableModifiers();
 
-		ModItemGroup.registerItemGroup();
+		EDItemGroup.registerItemGroup();
 	}
 }

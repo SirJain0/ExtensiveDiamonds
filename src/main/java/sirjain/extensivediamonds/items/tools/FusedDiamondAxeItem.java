@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.items.toolset;
+package sirjain.extensivediamonds.items.tools;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;

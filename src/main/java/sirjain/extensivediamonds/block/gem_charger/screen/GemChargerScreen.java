@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.screen;
+package sirjain.extensivediamonds.block.gem_charger.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.DrawContext;

@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.data;
+package sirjain.extensivediamonds.data.EDOrePlacement;
 
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -12,11 +12,11 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
-import sirjain.extensivediamonds.registry.RegisterBlocks;
+import sirjain.extensivediamonds.block.EDBlocks;
 
 import java.util.List;
 
-public class ModConfiguredFeatures {
+public class EDConfiguredFeatures {
 	public static final RegistryKey<ConfiguredFeature<?, ?>> RED_DIAMOND_ORE_KEY = registerKey("red_diamond_ore");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> GREEN_DIAMOND_ORE_KEY = registerKey("green_diamond_ore");
 	public static final RegistryKey<ConfiguredFeature<?, ?>> DARK_DIAMOND_ORE_KEY = registerKey("dark_diamond_ore");
@@ -26,16 +26,16 @@ public class ModConfiguredFeatures {
 		RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
 		List<OreFeatureConfig.Target> overworldRedDiamondOres =
-			List.of(OreFeatureConfig.createTarget(stoneReplaceables, RegisterBlocks.RED_DIAMOND_ORE.getDefaultState()),
-				OreFeatureConfig.createTarget(deepslateReplaceables, RegisterBlocks.DEEPSLATE_RED_DIAMOND_ORE.getDefaultState()));
+			List.of(OreFeatureConfig.createTarget(stoneReplaceables, EDBlocks.RED_DIAMOND_ORE.getDefaultState()),
+				OreFeatureConfig.createTarget(deepslateReplaceables, EDBlocks.DEEPSLATE_RED_DIAMOND_ORE.getDefaultState()));
 
 		List<OreFeatureConfig.Target> overworldGreenDiamondOres =
-			List.of(OreFeatureConfig.createTarget(stoneReplaceables, RegisterBlocks.GREEN_DIAMOND_ORE.getDefaultState()),
-				OreFeatureConfig.createTarget(deepslateReplaceables, RegisterBlocks.DEEPSLATE_GREEN_DIAMOND_ORE.getDefaultState()));
+			List.of(OreFeatureConfig.createTarget(stoneReplaceables, EDBlocks.GREEN_DIAMOND_ORE.getDefaultState()),
+				OreFeatureConfig.createTarget(deepslateReplaceables, EDBlocks.DEEPSLATE_GREEN_DIAMOND_ORE.getDefaultState()));
 
 		List<OreFeatureConfig.Target> overworldDarkDiamondOres =
-			List.of(OreFeatureConfig.createTarget(stoneReplaceables, RegisterBlocks.DARK_DIAMOND_ORE.getDefaultState()),
-				OreFeatureConfig.createTarget(deepslateReplaceables, RegisterBlocks.DEEPSLATE_DARK_DIAMOND_ORE.getDefaultState()));
+			List.of(OreFeatureConfig.createTarget(stoneReplaceables, EDBlocks.DARK_DIAMOND_ORE.getDefaultState()),
+				OreFeatureConfig.createTarget(deepslateReplaceables, EDBlocks.DEEPSLATE_DARK_DIAMOND_ORE.getDefaultState()));
 
 		register(context, RED_DIAMOND_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRedDiamondOres, 6));
 		register(context, GREEN_DIAMOND_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldGreenDiamondOres, 5));

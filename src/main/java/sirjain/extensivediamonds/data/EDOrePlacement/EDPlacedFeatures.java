@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.data;
+package sirjain.extensivediamonds.data.EDOrePlacement;
 
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -14,7 +14,7 @@ import sirjain.extensivediamonds.ExtensiveDiamonds;
 
 import java.util.List;
 
-public class ModPlacedFeatures {
+public class EDPlacedFeatures {
 	public static final RegistryKey<PlacedFeature> RED_DIAMOND_ORE_PLACED_KEY = registerKey("red_diamond_ore_placed");
 	public static final RegistryKey<PlacedFeature> GREEN_DIAMOND_ORE_PLACED_KEY = registerKey("green_diamond_ore_placed");
 	public static final RegistryKey<PlacedFeature> DARK_DIAMOND_ORE_PLACED_KEY = registerKey("dark_diamond_ore_placed");
@@ -22,16 +22,16 @@ public class ModPlacedFeatures {
 	public static void bootstrap(Registerable<PlacedFeature> context) {
 		var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-		register(context, RED_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_DIAMOND_ORE_KEY),
-			ModOrePlacement.modifiersWithCount(8,
+		register(context, RED_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(EDConfiguredFeatures.RED_DIAMOND_ORE_KEY),
+			EDOrePlacement.modifiersWithCount(8,
 				HeightRangePlacementModifier.uniform(YOffset.fixed(-59), YOffset.fixed(-42))));
 
-		register(context, GREEN_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GREEN_DIAMOND_ORE_KEY),
-			ModOrePlacement.modifiersWithCount(8,
+		register(context, GREEN_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(EDConfiguredFeatures.GREEN_DIAMOND_ORE_KEY),
+			EDOrePlacement.modifiersWithCount(8,
 				HeightRangePlacementModifier.uniform(YOffset.fixed(-60), YOffset.fixed(-45))));
 
-		register(context, DARK_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.DARK_DIAMOND_ORE_KEY),
-			ModOrePlacement.modifiersWithCount(8,
+		register(context, DARK_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(EDConfiguredFeatures.DARK_DIAMOND_ORE_KEY),
+			EDOrePlacement.modifiersWithCount(8,
 				HeightRangePlacementModifier.uniform(YOffset.fixed(-60), YOffset.fixed(-48))));
 	}
 

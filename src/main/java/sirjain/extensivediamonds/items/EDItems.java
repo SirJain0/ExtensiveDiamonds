@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.registry;
+package sirjain.extensivediamonds.items;
 
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -9,17 +9,17 @@ import net.minecraft.util.Rarity;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
 import sirjain.extensivediamonds.items.material.FusedDiamondArmor;
 import sirjain.extensivediamonds.items.material.FusedDiamondArmorMaterial;
-import sirjain.extensivediamonds.items.material.ModToolMaterials;
+import sirjain.extensivediamonds.items.material.EDToolMaterials;
 import sirjain.extensivediamonds.items.swords.DarkDiamondSwordItem;
 import sirjain.extensivediamonds.items.swords.FusedDiamondSwordItem;
 import sirjain.extensivediamonds.items.swords.GreenDiamondSwordItem;
 import sirjain.extensivediamonds.items.swords.RedDiamondSwordItem;
-import sirjain.extensivediamonds.items.toolset.FusedDiamondAxeItem;
-import sirjain.extensivediamonds.items.toolset.FusedDiamondHoeItem;
-import sirjain.extensivediamonds.items.toolset.FusedDiamondPickaxeItem;
-import sirjain.extensivediamonds.items.toolset.FusedDiamondShovelItem;
+import sirjain.extensivediamonds.items.tools.FusedDiamondAxeItem;
+import sirjain.extensivediamonds.items.tools.FusedDiamondHoeItem;
+import sirjain.extensivediamonds.items.tools.FusedDiamondPickaxeItem;
+import sirjain.extensivediamonds.items.tools.FusedDiamondShovelItem;
 
-public class RegisterItems {
+public class EDItems {
 	public static Item RED_DIAMOND;
 	public static Item GREEN_DIAMOND;
 	public static Item DARK_DIAMOND;
@@ -67,49 +67,49 @@ public class RegisterItems {
 		RED_DIAMOND_SWORD = Registry.register(
 			Registries.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "red_diamond_sword"),
-			new RedDiamondSwordItem(ModToolMaterials.RED_DIAMOND, 5, -2.8f, new Item.Settings())
+			new RedDiamondSwordItem(EDToolMaterials.RED_DIAMOND, 5, -2.8f, new Item.Settings())
 		);
 
 		GREEN_DIAMOND_SWORD = Registry.register(
 			Registries.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "green_diamond_sword"),
-			new GreenDiamondSwordItem(ModToolMaterials.GREEN_DIAMOND, 6, -2.8f, new Item.Settings())
+			new GreenDiamondSwordItem(EDToolMaterials.GREEN_DIAMOND, 6, -2.8f, new Item.Settings())
 		);
 
 		DARK_DIAMOND_SWORD = Registry.register(
 			Registries.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "dark_diamond_sword"),
-			new DarkDiamondSwordItem(ModToolMaterials.DARK_DIAMOND, 8, -2.5f, new Item.Settings())
+			new DarkDiamondSwordItem(EDToolMaterials.DARK_DIAMOND, 8, -2.5f, new Item.Settings())
 		);
 
 		FUSED_DIAMOND_SWORD = Registry.register(
 			Registries.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_sword"),
-			new FusedDiamondSwordItem(ModToolMaterials.FUSED_DIAMOND, 13, -2f, new Item.Settings())
+			new FusedDiamondSwordItem(EDToolMaterials.FUSED_DIAMOND, 13, -2f, new Item.Settings())
 		);
 
 		FUSED_DIAMOND_AXE = Registry.register(
 			Registries.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_axe"),
-			new FusedDiamondAxeItem(ModToolMaterials.FUSED_DIAMOND, 6, -2.5f, new Item.Settings())
+			new FusedDiamondAxeItem(EDToolMaterials.FUSED_DIAMOND, 6, -2.5f, new Item.Settings())
 		);
 
 		FUSED_DIAMOND_HOE = Registry.register(
 			Registries.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_hoe"),
-			new FusedDiamondHoeItem(ModToolMaterials.FUSED_DIAMOND, 3, -2.5f, new Item.Settings())
+			new FusedDiamondHoeItem(EDToolMaterials.FUSED_DIAMOND, 3, -2.5f, new Item.Settings())
 		);
 
 		FUSED_DIAMOND_SHOVEL = Registry.register(
 			Registries.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_shovel"),
-			new FusedDiamondShovelItem(ModToolMaterials.FUSED_DIAMOND, 4, -2.7f, new Item.Settings())
+			new FusedDiamondShovelItem(EDToolMaterials.FUSED_DIAMOND, 4, -2.7f, new Item.Settings())
 		);
 
 		FUSED_DIAMOND_PICKAXE = Registry.register(
 			Registries.ITEM,
 			new Identifier(ExtensiveDiamonds.MOD_ID, "fused_diamond_pickaxe"),
-			new FusedDiamondPickaxeItem(ModToolMaterials.FUSED_DIAMOND, 5, -2.7f, new Item.Settings().rarity(Rarity.UNCOMMON))
+			new FusedDiamondPickaxeItem(EDToolMaterials.FUSED_DIAMOND, 5, -2.7f, new Item.Settings().rarity(Rarity.UNCOMMON))
 		);
 	}
 

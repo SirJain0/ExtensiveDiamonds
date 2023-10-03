@@ -1,4 +1,4 @@
-package sirjain.extensivediamonds.data;
+package sirjain.extensivediamonds.data.EDOrePlacement;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
@@ -8,8 +8,8 @@ import sirjain.extensivediamonds.ExtensiveDiamonds;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModWorldGenerator extends FabricDynamicRegistryProvider {
-	public ModWorldGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+public class EDWorldGenerator extends FabricDynamicRegistryProvider {
+	public EDWorldGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
 		super(output, registriesFuture);
 	}
 
