@@ -17,7 +17,6 @@ public class FusedDiamondAxeItem extends AxeItem {
 		target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 3), attacker);
 		target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 18, 1), attacker);
 		attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 1));
-
 		return super.postHit(stack, target, attacker);
 	}
 }
