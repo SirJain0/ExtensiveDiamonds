@@ -8,10 +8,10 @@ import net.minecraft.sound.SoundEvents;
 import sirjain.extensivediamonds.items.EDItems;
 
 public class FusedDiamondArmorMaterial implements ArmorMaterial {
-	public static final FusedDiamondArmorMaterial material = new FusedDiamondArmorMaterial();
+	public static final FusedDiamondArmorMaterial MATERIAL = new FusedDiamondArmorMaterial();
 
-	private static final int[] BASE_DURABILITY = new int[]{904, 1020, 929, 890};
-	private static final int[] PROTECTION_VALUES = new int[]{8, 10, 12, 8};
+	private static final int[] BASE_DURABILITY = new int[] { 904, 1020, 929, 890 };
+	private static final int[] PROTECTION_VALUES = new int[] { 8, 10, 12, 8 };
 
 	@Override
 	public int getProtection(ArmorItem.Type type) {

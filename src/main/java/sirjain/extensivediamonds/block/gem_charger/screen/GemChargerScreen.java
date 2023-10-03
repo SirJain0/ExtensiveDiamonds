@@ -23,28 +23,31 @@ public class GemChargerScreen extends HandledScreen<GemChargerScreenHandler> {
 	}
 
 	protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
+		int x = (width - backgroundWidth) / 2;
+		int y = (height - backgroundHeight) / 2;
+
 		RenderSystem.setShader(GameRenderer::getPositionTexProgram);
 		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 		RenderSystem.setShaderTexture(0, GUI_TEXTURE);
-		int x = (width - backgroundWidth) / 2;
-		int y = (height - backgroundHeight) / 2;
-		context.drawTexture(GUI_TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
+		context.drawTexture(GUI_TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
 		renderProgressArrow(context, x, y);
 	}
 
-	private void renderProgressArrow(DrawContext context, int x, int y) {
-		if (handler.isCrafting()) {
+	/*
+	u and v = coordinates of progress bar texture
+	x and y = coordinates of starting point
+	height = height of progress bar's dimensions
+	*/
+	 private void renderProgressArrow(DrawContext context, int x, int y) {
+		if (handler.isCrafting())
 			context.drawTexture(GUI_TEXTURE, x + 19, y + 53, 0, 173, handler.getScaledProgress(), 13);
-			// u and v = coordinates of progress bar texture
-			// x and y = coordinates of starting point
-			// height = height of progress bar's dimensions
-		}
 	}
 
 	public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-		renderBackground(context, mouseX, mouseY, delta);
 		super.render(context, mouseX, mouseY, delta);
+
+		renderBackground(context, mouseX, mouseY, delta);
 		drawMouseoverTooltip(context, mouseX, mouseY);
 	}
 }
