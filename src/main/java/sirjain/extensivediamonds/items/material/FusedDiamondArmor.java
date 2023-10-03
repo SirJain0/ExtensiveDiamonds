@@ -16,14 +16,15 @@ public class FusedDiamondArmor extends ArmorItem {
 
 	@Override
 	public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-		if (!world.isClient()) {
-			if (entity instanceof PlayerEntity player) {
-				if (checkForWearingArmor(player) && checkForCorrectArmor(player)) {
-					player.addStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, 20 * 3, 1));
-					player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 20 * 3, 0));
-					player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 3, 0));
-				}
-			}
+		if (
+			!world.isClient() &&
+			entity instanceof PlayerEntity player &&
+			checkForWearingArmor(player) &&
+			checkForCorrectArmor(player)
+		) {
+			player.addStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, 20 * 3, 1));
+			player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 20 * 3, 0));
+			player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 3, 0));
 		}
 
 		super.inventoryTick(stack, world, entity, slot, selected);
@@ -49,9 +50,9 @@ public class FusedDiamondArmor extends ArmorItem {
 		ArmorItem legs = (ArmorItem) player.getInventory().getArmorStack(2).getItem();
 		ArmorItem boots = (ArmorItem) player.getInventory().getArmorStack(3).getItem();
 
-		return chest.getMaterial() == FusedDiamondArmorMaterial.material &&
-			head.getMaterial() == FusedDiamondArmorMaterial.material &&
-			legs.getMaterial() == FusedDiamondArmorMaterial.material &&
-			boots.getMaterial() == FusedDiamondArmorMaterial.material;
+		return chest.getMaterial() == FusedDiamondArmorMaterial.MATERIAL &&
+			head.getMaterial() == FusedDiamondArmorMaterial.MATERIAL &&
+			legs.getMaterial() == FusedDiamondArmorMaterial.MATERIAL &&
+			boots.getMaterial() == FusedDiamondArmorMaterial.MATERIAL;
 	}
 }

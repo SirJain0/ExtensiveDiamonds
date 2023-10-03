@@ -19,7 +19,7 @@ public class ExtensiveDiamonds implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		System.out.println(INIT_MESSAGE);
+		LOGGER.info(INIT_MESSAGE);
 
 		EDItems.registerDiamonds();
 		EDItems.registerCombat();

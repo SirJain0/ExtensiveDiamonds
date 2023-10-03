@@ -129,17 +129,22 @@ public class GemChargerBlockEntity extends BlockEntity implements NamedScreenHan
 	private static boolean hasValidRecipe(GemChargerBlockEntity charger) {
 		SimpleInventory inventory = new SimpleInventory(charger.size());
 
-		for (int i = 0; i < charger.size(); i++) {
+		for (int i = 0; i < charger.size(); i++)
 			inventory.setStack(i, charger.getStack(i));
-		}
 
-		boolean hasRedDiamond = charger.getStack(0).getItem() == EDItems.RED_DIAMOND || charger.getStack(1).getItem() == EDItems.RED_DIAMOND || charger.getStack(2).getItem() == EDItems.RED_DIAMOND || charger.getStack(3).getItem() == Items.DIAMOND;
-		boolean hasGreenDiamond = charger.getStack(0).getItem() == EDItems.GREEN_DIAMOND || charger.getStack(1).getItem() == EDItems.GREEN_DIAMOND || charger.getStack(2).getItem() == EDItems.GREEN_DIAMOND || charger.getStack(3).getItem() == Items.DIAMOND;
-		boolean hasDarkDiamond = charger.getStack(0).getItem() == EDItems.DARK_DIAMOND || charger.getStack(1).getItem() == EDItems.DARK_DIAMOND || charger.getStack(2).getItem() == EDItems.DARK_DIAMOND || charger.getStack(3).getItem() == Items.DIAMOND;
-		boolean hasVanillaDiamond = charger.getStack(0).getItem() == Items.DIAMOND || charger.getStack(1).getItem() == Items.DIAMOND || charger.getStack(2).getItem() == Items.DIAMOND || charger.getStack(3).getItem() == Items.DIAMOND;
-		boolean hasAllGems = hasRedDiamond && hasGreenDiamond && hasDarkDiamond && hasVanillaDiamond;
+		boolean hasAllGems = hasDiamond(EDItems.RED_DIAMOND, charger) &&
+			hasDiamond(EDItems.GREEN_DIAMOND, charger) &&
+			hasDiamond(EDItems.DARK_DIAMOND, charger) &&
+			hasDiamond(Items.DIAMOND, charger);
 
 		return hasAllGems && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, EDItems.FUSED_DIAMOND);
+	}
+
+	private static boolean hasDiamond(Item diamond, GemChargerBlockEntity charger) {
+		return charger.getStack(0).getItem() == diamond ||
+			charger.getStack(1).getItem() == diamond ||
+			charger.getStack(2).getItem() == diamond ||
+			charger.getStack(3).getItem() == diamond;
 	}
 
 	private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {

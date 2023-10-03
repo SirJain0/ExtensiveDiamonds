@@ -22,12 +22,11 @@ import sirjain.extensivediamonds.block.gem_charger.entity.EDBlockEntities;
 
 public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvider {
 	public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+	private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 25, 16);
 
 	public GemChargerBlock(Settings settings) {
 		super(settings);
 	}
-
-	private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 25, 16);
 
 	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -64,10 +63,12 @@ public class GemChargerBlock extends BlockWithEntity implements BlockEntityProvi
 	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity blockEntity = world.getBlockEntity(pos);
+
 			if (blockEntity instanceof GemChargerBlockEntity) {
 				ItemScatterer.spawn(world, pos, (GemChargerBlockEntity) blockEntity);
 				world.updateComparators(pos, this);
 			}
+
 			super.onStateReplaced(state, world, pos, newState, moved);
 		}
 	}
