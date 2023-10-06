@@ -8,10 +8,10 @@ import sirjain.extensivediamonds.items.EDItems;
 import java.util.function.Supplier;
 
 public enum EDToolMaterials implements ToolMaterial {
-	RED_DIAMOND(3, 1422, 1.0F, 0.0F, 30, () -> Ingredient.ofItems(EDItems.RED_DIAMOND)),
-	GREEN_DIAMOND(3, 1149, 1.0F, 0.0F, 16, () -> Ingredient.ofItems(EDItems.GREEN_DIAMOND)),
-	DARK_DIAMOND(4, 1729, 1.0F, 0.0F, 18, () -> Ingredient.ofItems(EDItems.DARK_DIAMOND)),
-	FUSED_DIAMOND(5, 1729, 1.3F, 0.0F, 22, () -> Ingredient.ofItems(EDItems.FUSED_DIAMOND));
+	RED_DIAMOND(3, 1422, 7.0F, 0.0F, 30, () -> Ingredient.ofItems(EDItems.RED_DIAMOND)),
+	GREEN_DIAMOND(3, 1349, 7.0F, 0.0F, 16, () -> Ingredient.ofItems(EDItems.GREEN_DIAMOND)),
+	DARK_DIAMOND(4, 1729, 8.0F, 0.0F, 18, () -> Ingredient.ofItems(EDItems.DARK_DIAMOND)),
+	FUSED_DIAMOND(5, 1729, 9.5F, 0.0F, 22, () -> Ingredient.ofItems(EDItems.FUSED_DIAMOND));
 
 	private final int miningLevel;
 	private final int itemDurability;

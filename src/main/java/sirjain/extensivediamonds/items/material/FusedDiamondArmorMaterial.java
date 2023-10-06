@@ -10,8 +10,8 @@ import sirjain.extensivediamonds.items.EDItems;
 public class FusedDiamondArmorMaterial implements ArmorMaterial {
 	public static final FusedDiamondArmorMaterial MATERIAL = new FusedDiamondArmorMaterial();
 
-	private static final int[] BASE_DURABILITY = new int[] { 904, 1020, 929, 890 };
-	private static final int[] PROTECTION_VALUES = new int[] { 8, 10, 12, 8 };
+	private static final int[] BASE_DURABILITY = new int[] { 504, 680, 500, 361 };
+	private static final int[] PROTECTION_VALUES = new int[] { 7, 10, 12, 6 };
 
 	@Override
 	public int getProtection(ArmorItem.Type type) {
@@ -45,7 +45,7 @@ public class FusedDiamondArmorMaterial implements ArmorMaterial {
 
 	@Override
 	public float getToughness() {
-		return 0;
+		return 2;
 	}
 
 	@Override
