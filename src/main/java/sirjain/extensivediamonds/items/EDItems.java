@@ -1,12 +1,16 @@
 package sirjain.extensivediamonds.items;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
+import sirjain.extensivediamonds.block.EDBlocks;
 import sirjain.extensivediamonds.items.material.FusedDiamondArmor;
 import sirjain.extensivediamonds.items.material.FusedDiamondArmorMaterial;
 import sirjain.extensivediamonds.items.material.EDToolMaterials;
@@ -18,6 +22,11 @@ import sirjain.extensivediamonds.items.tools.FusedDiamondAxeItem;
 import sirjain.extensivediamonds.items.tools.FusedDiamondHoeItem;
 import sirjain.extensivediamonds.items.tools.FusedDiamondPickaxeItem;
 import sirjain.extensivediamonds.items.tools.FusedDiamondShovelItem;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 public class EDItems {
 	public static Item RED_DIAMOND;
@@ -61,6 +70,46 @@ public class EDItems {
 		FUSED_DIAMOND_CHEST = registerFusedArmorItem("fused_diamond_chestplate", ArmorItem.Type.CHESTPLATE);
 		FUSED_DIAMOND_LEGS = registerFusedArmorItem("fused_diamond_leggings", ArmorItem.Type.LEGGINGS);
 		FUSED_DIAMOND_BOOTS = registerFusedArmorItem("fused_diamond_boots", ArmorItem.Type.BOOTS);
+	}
+
+	public static void registerItemsInVanillaTabs() {
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+			entries.addAfter(Items.DIAMOND, RED_DIAMOND, GREEN_DIAMOND, DARK_DIAMOND, FUSED_DIAMOND);
+		});
+
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(Items.DIAMOND_SWORD, RED_DIAMOND_SWORD, GREEN_DIAMOND_SWORD, DARK_DIAMOND_SWORD, FUSED_DIAMOND_SWORD);
+			entries.addAfter(Items.DIAMOND_AXE, FUSED_DIAMOND_AXE);
+			entries.addAfter(Items.DIAMOND_BOOTS, FUSED_DIAMOND_HELMET, FUSED_DIAMOND_CHEST, FUSED_DIAMOND_LEGS, FUSED_DIAMOND_BOOTS);
+		});
+
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.addAfter(
+			Items.DIAMOND_HOE,
+
+			FUSED_DIAMOND_SHOVEL,
+			FUSED_DIAMOND_PICKAXE,
+			FUSED_DIAMOND_AXE,
+			FUSED_DIAMOND_HOE
+		));
+
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> entries.addAfter(
+			Items.DEEPSLATE_DIAMOND_ORE,
+
+			EDBlocks.BLOCK_RED_DIAMOND_ORE,
+			EDBlocks.BLOCK_DEEPSLATE_RED_DIAMOND_ORE,
+			EDBlocks.BLOCK_GREEN_DIAMOND_ORE,
+			EDBlocks.BLOCK_DEEPSLATE_GREEN_DIAMOND_ORE,
+			EDBlocks.BLOCK_DARK_DIAMOND_ORE,
+			EDBlocks.BLOCK_DEEPSLATE_DARK_DIAMOND_ORE
+		));
+
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> entries.addAfter(
+			Items.DIAMOND_BLOCK,
+
+			EDBlocks.BLOCK_OF_RED_DIAMOND_BLOCK,
+			EDBlocks.BLOCK_OF_GREEN_DIAMOND_BLOCK,
+			EDBlocks.BLOCK_OF_DARK_DIAMOND_BLOCK
+		));
 	}
 
 	public static Item registerBasicItem(String id) {

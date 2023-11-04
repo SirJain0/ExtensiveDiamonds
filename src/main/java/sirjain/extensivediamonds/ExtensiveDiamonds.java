@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import sirjain.extensivediamonds.data.EDLootTableModifier;
 import sirjain.extensivediamonds.data.EDOrePlacement.EDOreGeneration;
 import sirjain.extensivediamonds.painting.EDPaintings;
-import sirjain.extensivediamonds.items.EDItemGroup;
 import sirjain.extensivediamonds.block.EDBlocks;
 import sirjain.extensivediamonds.items.EDItems;
 
@@ -28,6 +27,6 @@ public class ExtensiveDiamonds implements ModInitializer {
 		EDPaintings.registerPaintings();
 		EDLootTableModifier.registerLootTableModifiers();
 
-		EDItemGroup.registerItemGroup();
+		EDItems.registerItemsInVanillaTabs();
 	}
 }
