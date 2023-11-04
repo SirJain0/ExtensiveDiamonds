@@ -24,15 +24,15 @@ public class EDPlacedFeatures {
 
 		register(context, RED_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(EDConfiguredFeatures.RED_DIAMOND_ORE_KEY),
 			EDOrePlacement.modifiersWithCount(8,
-				HeightRangePlacementModifier.uniform(YOffset.fixed(-59), YOffset.fixed(-42))));
+				HeightRangePlacementModifier.uniform(YOffset.fixed(-51), YOffset.fixed(-39))));
 
 		register(context, GREEN_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(EDConfiguredFeatures.GREEN_DIAMOND_ORE_KEY),
 			EDOrePlacement.modifiersWithCount(8,
-				HeightRangePlacementModifier.uniform(YOffset.fixed(-60), YOffset.fixed(-45))));
+				HeightRangePlacementModifier.uniform(YOffset.fixed(-62), YOffset.fixed(-42))));
 
 		register(context, DARK_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(EDConfiguredFeatures.DARK_DIAMOND_ORE_KEY),
 			EDOrePlacement.modifiersWithCount(8,
-				HeightRangePlacementModifier.uniform(YOffset.fixed(-60), YOffset.fixed(-48))));
+				HeightRangePlacementModifier.uniform(YOffset.fixed(-62), YOffset.fixed(-45))));
 	}
 
 	public static RegistryKey<PlacedFeature> registerKey(String name) {
