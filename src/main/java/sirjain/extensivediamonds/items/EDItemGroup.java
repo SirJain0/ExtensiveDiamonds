@@ -47,7 +47,6 @@ public class EDItemGroup {
 					entries.add(EDBlocks.BLOCK_OF_GREEN_DIAMOND_BLOCK);
 					entries.add(EDBlocks.BLOCK_OF_DARK_DIAMOND_BLOCK);
 					entries.add(EDBlocks.BLOCK_OF_RED_DIAMOND_BLOCK);
-					entries.add(EDBlocks.GEM_CHARGER_ITEM);
 				}).build()
 		);
 	}

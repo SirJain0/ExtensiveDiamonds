@@ -13,7 +13,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import sirjain.extensivediamonds.ExtensiveDiamonds;
-import sirjain.extensivediamonds.block.gem_charger.GemChargerBlock;
 
 public class EDBlocks {
 	public static Block RED_DIAMOND_ORE;
@@ -25,7 +24,6 @@ public class EDBlocks {
 	public static Block BLOCK_OF_GREEN_DIAMOND;
 	public static Block BLOCK_OF_RED_DIAMOND;
 	public static Block BLOCK_OF_DARK_DIAMOND;
-	public static Block GEM_CHARGER;
 
 	public static Item BLOCK_RED_DIAMOND_ORE;
 	public static Item BLOCK_GREEN_DIAMOND_ORE;
@@ -36,7 +34,6 @@ public class EDBlocks {
 	public static Item BLOCK_OF_GREEN_DIAMOND_BLOCK;
 	public static Item BLOCK_OF_DARK_DIAMOND_BLOCK;
 	public static Item BLOCK_OF_RED_DIAMOND_BLOCK;
-	public static Item GEM_CHARGER_ITEM;
 
 	// Includes deepslate and regular ore blocks.
 	public static void registerOres() {
@@ -63,20 +60,6 @@ public class EDBlocks {
 		BLOCK_OF_RED_DIAMOND_BLOCK = registerBlockItem("block_of_red_diamond", BLOCK_OF_RED_DIAMOND);
 		BLOCK_OF_GREEN_DIAMOND_BLOCK = registerBlockItem("block_of_green_diamond", BLOCK_OF_GREEN_DIAMOND);
 		BLOCK_OF_DARK_DIAMOND_BLOCK = registerBlockItem("block_of_dark_diamond", BLOCK_OF_DARK_DIAMOND);
-	}
-
-	public static void registerGemCharger() {
-		GEM_CHARGER = Registry.register(
-			Registries.BLOCK,
-			new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
-			new GemChargerBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE).requiresTool().nonOpaque().strength(3.0f, 3.0f).luminance((state) -> 6))
-		);
-
-		GEM_CHARGER_ITEM = Registry.register(
-			Registries.ITEM,
-			new Identifier(ExtensiveDiamonds.MOD_ID, "gem_charger"),
-			new BlockItem(GEM_CHARGER, new Item.Settings())
-		);
 	}
 
 	public static Block registerOre(String id) {

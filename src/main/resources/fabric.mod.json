@@ -21,9 +21,6 @@
     "main": [
       "sirjain.extensivediamonds.ExtensiveDiamonds"
     ],
-    "client": [
-      "sirjain.extensivediamonds.ExtensiveDiamondsClient"
-    ],
     "fabric-datagen": [
       "sirjain.extensivediamonds.data.EDOrePlacement.EDDataGeneration"
     ]
