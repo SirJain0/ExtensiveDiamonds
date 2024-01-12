@@ -1,37 +1,43 @@
 {
-  "schemaVersion": 1,
-  "id": "extensivediamonds",
-  "version": "${version}",
+	"schemaVersion": 1,
+	"id": "extensivediamonds",
+	"version": "${version}",
 
-  "name": "Extensive Diamonds",
-  "description": "Adds more diamonds to Minecraft!",
-  "authors": [
-    "SirJain"
-  ],
-  "contact": {
-    "twitter": "https://twitter.com/SirJain2",
-    "discord": "https://discord.gg/wM4CKTbFVN",
-    "sources": "https://github.com/SirJain0/extensive_diamonds",
-    "issues": "https://github.com/SirJain0/extensive_diamonds/issues"
-  },
-  "license": "MIT",
-  "icon": "assets/extensivediamonds/edlogo.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "sirjain.extensivediamonds.ExtensiveDiamonds"
-    ],
-    "fabric-datagen": [
-      "sirjain.extensivediamonds.data.EDOrePlacement.EDDataGeneration"
-    ]
-  },
-  "depends": {
-    "fabricloader": ">=0.14.6",
-    "fabric": "*",
-    "minecraft": ">=1.20",
-    "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
-  }
+	"name": "Extensive Diamonds",
+	"description": "Adds more diamonds to Minecraft!",
+
+	"authors": [
+		"SirJain"
+	],
+
+	"contact": {
+		"twitter": "https://twitter.com/SirJain2",
+		"discord": "https://discord.gg/wM4CKTbFVN",
+		"sources": "https://github.com/SirJain0/extensive_diamonds",
+		"issues": "https://github.com/SirJain0/extensive_diamonds/issues"
+	},
+
+	"license": "MIT",
+	"icon": "assets/extensivediamonds/edlogo.png",
+	"environment": "*",
+
+	"entrypoints": {
+		"main": [
+			"sirjain.extensivediamonds.ExtensiveDiamonds"
+		],
+		"fabric-datagen": [
+			"sirjain.extensivediamonds.data.EDOrePlacement.EDDataGeneration"
+		]
+	},
+
+	"depends": {
+		"fabricloader": ">=0.14.6",
+		"fabric": "*",
+		"minecraft": ">=1.20",
+		"java": ">=17"
+	},
+	
+	"suggests": {
+		"another-mod": "*"
+	}
 }
