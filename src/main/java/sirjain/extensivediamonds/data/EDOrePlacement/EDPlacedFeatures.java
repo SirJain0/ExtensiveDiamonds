@@ -23,16 +23,16 @@ public class EDPlacedFeatures {
 		var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
 		register(context, RED_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(EDConfiguredFeatures.RED_DIAMOND_ORE_KEY),
-			EDOrePlacement.modifiersWithCount(8,
-				HeightRangePlacementModifier.uniform(YOffset.fixed(-51), YOffset.fixed(-39))));
+			EDOrePlacement.modifiersWithCount(4,
+				HeightRangePlacementModifier.uniform(YOffset.fixed(-51), YOffset.fixed(-36))));
 
 		register(context, GREEN_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(EDConfiguredFeatures.GREEN_DIAMOND_ORE_KEY),
-			EDOrePlacement.modifiersWithCount(8,
-				HeightRangePlacementModifier.uniform(YOffset.fixed(-62), YOffset.fixed(-42))));
+			EDOrePlacement.modifiersWithCount(4,
+				HeightRangePlacementModifier.uniform(YOffset.fixed(-62), YOffset.fixed(-37))));
 
 		register(context, DARK_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(EDConfiguredFeatures.DARK_DIAMOND_ORE_KEY),
-			EDOrePlacement.modifiersWithCount(8,
-				HeightRangePlacementModifier.uniform(YOffset.fixed(-62), YOffset.fixed(-45))));
+			EDOrePlacement.modifiersWithCount(3,
+				HeightRangePlacementModifier.uniform(YOffset.fixed(-62), YOffset.fixed(-40))));
 	}
 
 	public static RegistryKey<PlacedFeature> registerKey(String name) {

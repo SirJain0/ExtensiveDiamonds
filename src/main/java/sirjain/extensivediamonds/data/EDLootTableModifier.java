@@ -16,11 +16,11 @@ import sirjain.extensivediamonds.items.EDItems;
 public class EDLootTableModifier {
 	public static void registerLootTableModifiers() {
 		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-			addItem(LootTables.VILLAGE_DESERT_HOUSE_CHEST, EDItems.FUSED_DIAMOND, 0.06f, id, tableBuilder);
-			addItem(LootTables.ANCIENT_CITY_CHEST, EDItems.FUSED_DIAMOND, 0.3f, id, tableBuilder);
-			addItem(LootTables.VILLAGE_ARMORER_CHEST, EDItems.FUSED_DIAMOND, 0.08f, id, tableBuilder);
-			addItem(LootTables.VILLAGE_BUTCHER_CHEST, EDItems.FUSED_DIAMOND, 0.06f, id, tableBuilder);
-			addItem(LootTables.VILLAGE_TEMPLE_CHEST, EDItems.FUSED_DIAMOND, 0.08f, id, tableBuilder);
+			addItem(LootTables.VILLAGE_DESERT_HOUSE_CHEST, EDItems.FUSED_DIAMOND, 0.04f, id, tableBuilder);
+			addItem(LootTables.ANCIENT_CITY_CHEST, EDItems.FUSED_DIAMOND, 0.2f, id, tableBuilder);
+			addItem(LootTables.VILLAGE_ARMORER_CHEST, EDItems.FUSED_DIAMOND, 0.06f, id, tableBuilder);
+			addItem(LootTables.VILLAGE_BUTCHER_CHEST, EDItems.FUSED_DIAMOND, 0.05f, id, tableBuilder);
+			addItem(LootTables.VILLAGE_TEMPLE_CHEST, EDItems.FUSED_DIAMOND, 0.06f, id, tableBuilder);
 		});
 	}
 
