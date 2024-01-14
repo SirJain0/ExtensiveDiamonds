@@ -20,10 +20,11 @@ public class EDDiamondBlock extends ExperienceDroppingBlock {
 		this.steppedEffect = steppedEffect;
 	}
 
-	public void onSteppedOn(World world, BlockPos blockPos, BlockState blockState, Entity entity) {
-		if (world.isClient) return;
-		((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(steppedEffect, 3 * 20, amplifier));
+	public void onSteppedOn(World world, BlockPos blockPos, BlockState blockState, Entity steppedEntity) {
+		if (!world.isClient && steppedEntity instanceof LivingEntity entity) {
+			entity.addStatusEffect(new StatusEffectInstance(steppedEffect, 3 * 20, amplifier));
+		}
 
-		super.onSteppedOn(world, blockPos, blockState, entity);
+		super.onSteppedOn(world, blockPos, blockState, steppedEntity);
 	}
 }
