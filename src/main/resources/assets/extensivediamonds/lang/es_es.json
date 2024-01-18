@@ -24,5 +24,9 @@
     "item.extensivediamonds.fused_diamond_chestplate": "Coraza de Diamante Fusionado",
     "item.extensivediamonds.fused_diamond_leggings": "Mallas de Diamante Fusionado",
     "item.extensivediamonds.fused_diamond_boots": "Botas de Diamante Fusionado",
-    "item.extensivediamonds.red_diamond": "Diamante Rojo"
+    "item.extensivediamonds.red_diamond": "Diamante Rojo",
+    "item.extensivediamonds.fused_diamond_armor.tooltip1": "Bonos de conjunto completo:",
+    "item.extensivediamonds.fused_diamond_armor.tooltip2": "   Suerte II",
+    "item.extensivediamonds.fused_diamond_armor.tooltip3": "   Fortaleza I",
+    "item.extensivediamonds.fused_diamond_armor.tooltip4": "   Resistencia I"
 }
