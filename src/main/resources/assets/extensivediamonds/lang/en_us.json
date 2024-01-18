@@ -1,35 +1,32 @@
 {
   "itemGroup.extensivediamonds.extensivediamonds": "Extensive Diamonds",
-
   "item.extensivediamonds.red_diamond": "Red Diamond",
   "item.extensivediamonds.green_diamond": "Green Diamond",
   "item.extensivediamonds.dark_diamond": "Dark Diamond",
   "item.extensivediamonds.fused_diamond": "Fused Diamond",
-
   "item.extensivediamonds.red_diamond_sword": "Red Diamond Sword",
   "item.extensivediamonds.green_diamond_sword": "Green Diamond Sword",
   "item.extensivediamonds.dark_diamond_sword": "Dark Diamond Sword",
   "item.extensivediamonds.fused_diamond_sword": "Fused Diamond Sword",
-
   "block.extensivediamonds.dark_diamond_ore": "Dark Diamond Ore",
   "block.extensivediamonds.green_diamond_ore": "Green Diamond Ore",
   "block.extensivediamonds.red_diamond_ore": "Red Diamond Ore",
-
   "block.extensivediamonds.deepslate_dark_diamond_ore": "Deepslate Dark Diamond Ore",
   "block.extensivediamonds.deepslate_green_diamond_ore": "Deepslate Green Diamond Ore",
   "block.extensivediamonds.deepslate_red_diamond_ore": "Deepslate Red Diamond Ore",
-
   "block.extensivediamonds.block_of_green_diamond": "Block of Green Diamond",
   "block.extensivediamonds.block_of_red_diamond": "Block of Red Diamond",
   "block.extensivediamonds.block_of_dark_diamond": "Block of Dark Diamond",
-
   "item.extensivediamonds.fused_diamond_pickaxe": "Fused Diamond Pickaxe",
   "item.extensivediamonds.fused_diamond_axe": "Fused Diamond Axe",
   "item.extensivediamonds.fused_diamond_hoe": "Fused Diamond Hoe",
   "item.extensivediamonds.fused_diamond_shovel": "Fused Diamond Shovel",
-
   "item.extensivediamonds.fused_diamond_helmet": "Fused Diamond Helmet",
   "item.extensivediamonds.fused_diamond_chestplate": "Fused Diamond Chestplate",
   "item.extensivediamonds.fused_diamond_leggings": "Fused Diamond Leggings",
-  "item.extensivediamonds.fused_diamond_boots": "Fused Diamond Boots"
+  "item.extensivediamonds.fused_diamond_boots": "Fused Diamond Boots",
+  "item.extensivediamonds.fused_diamond_armor.tooltip1": "4 Set Bonus:",
+  "item.extensivediamonds.fused_diamond_armor.tooltip2": "   Luck II",
+  "item.extensivediamonds.fused_diamond_armor.tooltip3": "   Strength I",
+  "item.extensivediamonds.fused_diamond_armor.tooltip4": "   Resistance I"
 }
